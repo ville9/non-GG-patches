@@ -1,0 +1,96 @@
+This file contains patches that need to be applied to the standard
+AmigaOS "include" files from the v40 NDUK archive.  First copy the
+include directory from the NDUK to GG:os-include then cd to that
+directory and run:
+
+        patch -p2 -E -b .pbak <diff-file
+
+where 'diff-file' is this patch file.  After running patch you should
+remove all the generated *.pbak files, and look for any *.rej files
+that indicate a problem patching the files.
+
+============================================================================
+
+diff -rc v40/include/clib/commodities_protos.h gg/os-include/clib/commodities_protos.h
+*** v40/include/clib/commodities_protos.h	Fri Oct 15 10:24:54 1993
+--- gg/os-include/clib/commodities_protos.h	Wed Aug 14 13:04:49 1996
+***************
+*** 32,38 ****
+  
+  CxObj *CreateCxObj( unsigned long type, long arg1, long arg2 );
+  CxObj *CxBroker( struct NewBroker *nb, LONG *error );
+! LONG ActivateCxObj( CxObj *co, long true );
+  void DeleteCxObj( CxObj *co );
+  void DeleteCxObjAll( CxObj *co );
+  ULONG CxObjType( CxObj *co );
+--- 32,38 ----
+  
+  CxObj *CreateCxObj( unsigned long type, long arg1, long arg2 );
+  CxObj *CxBroker( struct NewBroker *nb, LONG *error );
+! LONG ActivateCxObj( CxObj *co, long tf );
+  void DeleteCxObj( CxObj *co );
+  void DeleteCxObjAll( CxObj *co );
+  ULONG CxObjType( CxObj *co );
+diff -rc v40/include/devices/timer.h gg/os-include/devices/timer.h
+*** v40/include/devices/timer.h	Fri Oct 15 10:25:08 1993
+--- gg/os-include/devices/timer.h	Thu Aug 15 12:54:18 1996
+***************
+*** 22,31 ****
+--- 22,38 ----
+  
+  #define TIMERNAME	"timer.device"
+  
++ #ifndef _SYS_TIME_H_
++ /* Use whatever was included first, standard (<sys/time.h>) or
++    Amiga (<devices/timer.h>) includes. */
+  struct timeval {
+      ULONG tv_secs;
+      ULONG tv_micro;
+  };
++ #else
++ #define tv_secs tv_sec
++ #define tv_micro tv_usec
++ #endif
+  
+  struct EClockVal {
+      ULONG ev_hi;
+diff -rc v40/include/libraries/mathieeedp.h gg/os-include/libraries/mathieeedp.h
+*** v40/include/libraries/mathieeedp.h	Fri Oct 15 10:26:02 1993
+--- gg/os-include/libraries/mathieeedp.h	Thu Jul  7 12:24:26 1994
+***************
+*** 10,16 ****
+  */
+  
+  #ifndef PI
+! #define PI	((double)	3.141592653589793))
+  #endif
+  
+  #define TWO_PI	(((double)	2)	* PI)
+--- 10,16 ----
+  */
+  
+  #ifndef PI
+! #define PI	((double)	3.141592653589793)
+  #endif
+  
+  #define TWO_PI	(((double)	2)	* PI)
+diff -rc v40/include/libraries/mathieeesp.h gg/os-include/libraries/mathieeesp.h
+*** v40/include/libraries/mathieeesp.h	Fri Oct 15 10:26:04 1993
+--- gg/os-include/libraries/mathieeesp.h	Thu Jul  7 12:23:50 1994
+***************
+*** 12,18 ****
+  */
+  
+  #ifndef PI
+! #define PI	((float)	3.141592653589793))
+  #endif
+  
+  #define TWO_PI	(((float)	2)	* PI)
+--- 12,18 ----
+  */
+  
+  #ifndef PI
+! #define PI	((float)	3.141592653589793)
+  #endif
+  
+  #define TWO_PI	(((float)	2)	* PI)

@@ -1,0 +1,53 @@
+This file contains patches that need to be applied to the standard
+AmigaOS "fd" files from the v40 NDUK archive.  First copy the "fd"
+directory from the NDUK to GG:os-lib/fd, then cd to that directory and
+run:
+
+        patch -p2 -E -b .pbak <diff-file
+
+where 'diff-file' is this patch file.  After running patch you should
+remove all the generated *.pbak files, and look for any *.rej files
+that indicate a problem patching the files.
+
+============================================================================
+
+diff -rc v40/fd/amigaguide_lib.fd os-lib/fd/amigaguide_lib.fd
+*** v40/fd/amigaguide_lib.fd	Fri Oct 15 10:47:58 1993
+--- os-lib/fd/amigaguide_lib.fd	Tue Aug 13 19:33:10 1996
+***************
+*** 13,19 ****
+  ##private
+  amigaguidePrivate2()()
+  ##public
+! OpenAmigaGuideA(nag,*)(a0/a1)
+  OpenAmigaGuideAsyncA(nag,attrs)(a0,d0)
+  CloseAmigaGuide(cl)(a0)
+  AmigaGuideSignal(cl)(a0)
+--- 13,19 ----
+  ##private
+  amigaguidePrivate2()()
+  ##public
+! OpenAmigaGuideA(nag,attrs)(a0/a1)
+  OpenAmigaGuideAsyncA(nag,attrs)(a0,d0)
+  CloseAmigaGuide(cl)(a0)
+  AmigaGuideSignal(cl)(a0)
+diff -rc v40/fd/commodities_lib.fd os-lib/fd/commodities_lib.fd
+*** v40/fd/commodities_lib.fd	Fri Oct 15 10:48:00 1993
+--- os-lib/fd/commodities_lib.fd	Tue Aug 13 19:33:20 1996
+***************
+*** 7,13 ****
+  *
+  CreateCxObj(type,arg1,arg2)(d0/a0/a1)
+  CxBroker(nb,error)(a0,d0)
+! ActivateCxObj(co,true)(a0,d0)
+  DeleteCxObj(co)(a0)
+  DeleteCxObjAll(co)(a0)
+  CxObjType(co)(a0)
+--- 7,13 ----
+  *
+  CreateCxObj(type,arg1,arg2)(d0/a0/a1)
+  CxBroker(nb,error)(a0,d0)
+! ActivateCxObj(co,tf)(a0,d0)
+  DeleteCxObj(co)(a0)
+  DeleteCxObjAll(co)(a0)
+  CxObjType(co)(a0)
