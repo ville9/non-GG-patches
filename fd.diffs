@@ -1,5 +1,5 @@
 This file contains patches that need to be applied to the standard
-AmigaOS "fd" files from the v40 NDUK archive.  First copy the "fd"
+AmigaOS "fd" files from the v45 NDUK archive.  First copy the "fd"
 directory from the NDUK to GG:os-lib/fd, then cd to that directory and
 run:
 
@@ -11,43 +11,79 @@ that indicate a problem patching the files.
 
 ============================================================================
 
-diff -rc v40/fd/amigaguide_lib.fd os-lib/fd/amigaguide_lib.fd
-*** v40/fd/amigaguide_lib.fd	Fri Oct 15 10:47:58 1993
---- os-lib/fd/amigaguide_lib.fd	Tue Aug 13 19:33:10 1996
+diff -rc v45/fd/hdwrench.fd os-lib/fd/hdwrench_lib.fd
+*** v45/fd/hdwrench.fd	Wed Aug  4 20:32:04 1999
+--- os-lib/fd/hdwrench_lib.fd	Mon Mar 26 03:30:54 2007
 ***************
-*** 13,19 ****
-  ##private
-  amigaguidePrivate2()()
+*** 3,30 ****
   ##public
-! OpenAmigaGuideA(nag,*)(a0/a1)
-  OpenAmigaGuideAsyncA(nag,attrs)(a0,d0)
-  CloseAmigaGuide(cl)(a0)
-  AmigaGuideSignal(cl)(a0)
---- 13,19 ----
-  ##private
-  amigaguidePrivate2()()
+  HDWOpenDevice(DevName,Unit)(A0,D0)
+  HDWCloseDevice(void)()
+! RawRead(*bbk,size)(A0,D0)
+! RawWrite(*bb)(A0)
+! WriteBlock(*bb)(A0)
+! ReadRDBs(void)();
+  WriteRDBs(void)()
+  QueryReady(errorcode)(A0)
+  QueryInquiry(inqbuf,errorcode)(A0/A1)
+  QueryModeSense(page,msbsize,msbuf,errorcode)(D0/D1,A0/A1)
+! QueryFindValid(*ValidIDs,devicename,board,types,wide_scsi,Callback)(A0/A1,D0/D1/D2,A2)
+  QueryCapacity(totalblocks,blocksize)(A0/A1)
+! ReadMountfile(unit,*filename,controller)(D0,A0/A1)
+! ReadRDBStructs(*filename, unit)(A0,D0)
+! WriteMountfile(filename,*ldir,unit)(A0/A1,D0)
+! WriteRDBStructs(*filename)(A0)
+! InMemMountfile(unit,*mfdata,*controller)(D0,A0/A1)
+! InMemRDBStructs(*rdbp,sizerdb,unit)(A0,D0/D1)
+! OutMemMountfile(*mfp,*sizew,sizeb,unit)(A0/A1,D0/D1)
+! OutMemRDBStructs(*rdbp,*sizew,sizeb)(A0/A1,D0)
+! FindDiskName(*diskname)(A0)
+! FindControllerID(*devname,*selfid)(A0/A1)
+  FindLastSector(void)()
+! FindDefaults(Optimize,*Return)(D0,A0)
+  LowlevelFormat(Callback)(A0)
+  VerifyDrive(CallBack)(A0)
+  ##end
+--- 3,30 ----
   ##public
-! OpenAmigaGuideA(nag,attrs)(a0/a1)
-  OpenAmigaGuideAsyncA(nag,attrs)(a0,d0)
-  CloseAmigaGuide(cl)(a0)
-  AmigaGuideSignal(cl)(a0)
-diff -rc v40/fd/commodities_lib.fd os-lib/fd/commodities_lib.fd
-*** v40/fd/commodities_lib.fd	Fri Oct 15 10:48:00 1993
---- os-lib/fd/commodities_lib.fd	Tue Aug 13 19:33:20 1996
+  HDWOpenDevice(DevName,Unit)(A0,D0)
+  HDWCloseDevice(void)()
+! RawRead(bbk,size)(A0,D0)
+! RawWrite(bb)(A0)
+! WriteBlock(bb)(A0)
+! ReadRDBs(void)()
+  WriteRDBs(void)()
+  QueryReady(errorcode)(A0)
+  QueryInquiry(inqbuf,errorcode)(A0/A1)
+  QueryModeSense(page,msbsize,msbuf,errorcode)(D0/D1,A0/A1)
+! QueryFindValid(ValidIDs,devicename,board,types,wide_scsi,Callback)(A0/A1,D0/D1/D2,A2)
+  QueryCapacity(totalblocks,blocksize)(A0/A1)
+! ReadMountfile(unit,filename,controller)(D0,A0/A1)
+! ReadRDBStructs(filename, unit)(A0,D0)
+! WriteMountfile(filename,ldir,unit)(A0/A1,D0)
+! WriteRDBStructs(filename)(A0)
+! InMemMountfile(unit,mfdata,controller)(D0,A0/A1)
+! InMemRDBStructs(rdbp,sizerdb,unit)(A0,D0/D1)
+! OutMemMountfile(mfp,sizew,sizeb,unit)(A0/A1,D0/D1)
+! OutMemRDBStructs(rdbp,sizew,sizeb)(A0/A1,D0)
+! FindDiskName(diskname)(A0)
+! FindControllerID(devname,selfid)(A0/A1)
+  FindLastSector(void)()
+! FindDefaults(Optimize,Return)(D0,A0)
+  LowlevelFormat(Callback)(A0)
+  VerifyDrive(CallBack)(A0)
+  ##end
+diff -rc v45/fd/texteditor_lib.fd os-lib/fd/texteditor_lib.fd
+*** v45/fd/texteditor_lib.fd	Mon Dec 17 14:30:58 2001
+--- os-lib/fd/texteditor_lib.fd	Wed Nov  3 08:39:22 1999
 ***************
-*** 7,13 ****
-  *
-  CreateCxObj(type,arg1,arg2)(d0/a0/a1)
-  CxBroker(nb,error)(a0,d0)
-! ActivateCxObj(co,true)(a0,d0)
-  DeleteCxObj(co)(a0)
-  DeleteCxObjAll(co)(a0)
-  CxObjType(co)(a0)
---- 7,13 ----
-  *
-  CreateCxObj(type,arg1,arg2)(d0/a0/a1)
-  CxBroker(nb,error)(a0,d0)
-! ActivateCxObj(co,tf)(a0,d0)
-  DeleteCxObj(co)(a0)
-  DeleteCxObjAll(co)(a0)
-  CxObjType(co)(a0)
+*** 1,4 ****
+! ##base _TextFieldBase
+  ##bias 30
+  ##public
+  TEXTEDITOR_GetClass()()
+--- 1,4 ----
+! ##base _TextEditorBase
+  ##bias 30
+  ##public
+  TEXTEDITOR_GetClass()()
