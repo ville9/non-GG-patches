@@ -1,5 +1,5 @@
 This file contains patches that need to be applied to the standard
-AmigaOS "include" files from the v45 NDUK archive.  First copy the
+AmigaOS "include" files from the v47 NDUK archive.  First copy the
 include directory from the NDUK to GG:os-include then cd to that
 directory and run:
 
@@ -11,9 +11,9 @@ that indicate a problem patching the files.
 
 ============================================================================
 
-diff -rc v45/include/classes/arexx.h gg/os-include/classes/arexx.h
-*** v45/include/classes/arexx.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/classes/arexx.h	Fri Aug 13 20:23:58 2004
+diff -rc v47/include/classes/arexx.h gg/os-include/classes/arexx.h
+*** v47/include/classes/arexx.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/classes/arexx.h	Thu Feb  3 01:19:05 2022
 ***************
 *** 50,55 ****
 --- 50,59 ----
@@ -39,12 +39,12 @@ diff -rc v45/include/classes/arexx.h gg/os-include/classes/arexx.h
 + #endif
   
   #endif /* CLASSES_AREXX_H */
-diff -rc v45/include/classes/requester.h gg/os-include/classes/requester.h
-*** v45/include/classes/requester.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/classes/requester.h	Fri Aug 13 20:25:53 2004
+diff -rc v47/include/classes/requester.h gg/os-include/classes/requester.h
+*** v47/include/classes/requester.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/classes/requester.h	Thu Feb  3 01:20:01 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <reaction/reaction.h>
   #endif
   
@@ -56,8 +56,8 @@ diff -rc v45/include/classes/requester.h gg/os-include/classes/requester.h
   
   /* Attributes defined by the requester.gadget class
 ***************
-*** 185,190 ****
---- 189,198 ----
+*** 204,209 ****
+--- 208,217 ----
   #ifndef RequesterObject
   #define OpenRequester(obj, win)	DoMethod(obj, RM_OPENREQ, NULL, win, NULL, TAG_DONE)
   #define RequesterObject			NewObject(REQUESTER_GetClass(), NULL
@@ -68,12 +68,12 @@ diff -rc v45/include/classes/requester.h gg/os-include/classes/requester.h
   #endif
   
   #endif /* CLASSES_REQUESTER_H */
-diff -rc v45/include/classes/window.h gg/os-include/classes/window.h
-*** v45/include/classes/window.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/classes/window.h	Fri Aug 13 20:26:32 2004
+diff -rc v47/include/classes/window.h gg/os-include/classes/window.h
+*** v47/include/classes/window.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/classes/window.h	Thu Feb  3 01:20:32 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <reaction/reaction.h>
   #endif
   
@@ -83,10 +83,10 @@ diff -rc v45/include/classes/window.h gg/os-include/classes/window.h
 + 
   /****************************************************************************/
   
-  /*
+  #define WA_WindowBox         (WA_Dummy + 0x3b)
 ***************
-*** 268,272 ****
---- 272,280 ----
+*** 283,287 ****
+--- 287,295 ----
   	STRPTR hi_Text;		/* The text of the hint.. */
   	ULONG hi_Flags;		/* Flags, currently unsupported and must be set to 0L. */
   };
@@ -96,12 +96,12 @@ diff -rc v45/include/classes/window.h gg/os-include/classes/window.h
 + #endif
   
   #endif /* CLASSES_WINDOW_H */
-diff -rc v45/include/datatypes/animationclass.h gg/os-include/datatypes/animationclass.h
-*** v45/include/datatypes/animationclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/animationclass.h	Fri Aug 13 20:29:40 2004
+diff -rc v47/include/datatypes/animationclass.h gg/os-include/datatypes/animationclass.h
+*** v47/include/datatypes/animationclass.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/animationclass.h	Thu Feb  3 01:23:56 2022
 ***************
-*** 30,35 ****
---- 30,39 ----
+*** 29,34 ****
+--- 29,38 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -113,8 +113,8 @@ diff -rc v45/include/datatypes/animationclass.h gg/os-include/datatypes/animatio
   
   #define	ANIMATIONDTCLASS		"animation.datatype"
 ***************
-*** 261,265 ****
---- 265,273 ----
+*** 260,264 ****
+--- 264,272 ----
   };
   
   /*****************************************************************************/
@@ -124,12 +124,12 @@ diff -rc v45/include/datatypes/animationclass.h gg/os-include/datatypes/animatio
 + #endif
   
   #endif	/* DATATYPES_ANIMATIONCLASS_H */
-diff -rc v45/include/datatypes/datatypes.h gg/os-include/datatypes/datatypes.h
-*** v45/include/datatypes/datatypes.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/datatypes.h	Fri Aug 13 20:30:57 2004
+diff -rc v47/include/datatypes/datatypes.h gg/os-include/datatypes/datatypes.h
+*** v47/include/datatypes/datatypes.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/datatypes.h	Thu Feb  3 01:24:19 2022
 ***************
-*** 29,34 ****
---- 29,38 ----
+*** 28,33 ****
+--- 28,37 ----
   #include <dos/dos.h>
   #endif
   
@@ -141,8 +141,8 @@ diff -rc v45/include/datatypes/datatypes.h gg/os-include/datatypes/datatypes.h
   
   #define ID_DTYP MAKE_ID('D','T','Y','P')
 ***************
-*** 225,229 ****
---- 229,237 ----
+*** 229,233 ****
+--- 233,241 ----
   #define	DTMSG_TYPE_OFFSET			2100
   
   /*****************************************************************************/
@@ -151,13 +151,13 @@ diff -rc v45/include/datatypes/datatypes.h gg/os-include/datatypes/datatypes.h
 + #pragma pack()
 + #endif
   
-  #endif	 /* DATATYPES_DATATYPES_H */
-diff -rc v45/include/datatypes/datatypesclass.h gg/os-include/datatypes/datatypesclass.h
-*** v45/include/datatypes/datatypesclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/datatypesclass.h	Fri Aug 13 20:31:31 2004
+  #endif   /* DATATYPES_DATATYPES_H */
+diff -rc v47/include/datatypes/datatypesclass.h gg/os-include/datatypes/datatypesclass.h
+*** v47/include/datatypes/datatypesclass.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/datatypesclass.h	Thu Feb  3 01:24:53 2022
 ***************
-*** 30,35 ****
---- 30,39 ----
+*** 29,34 ****
+--- 29,38 ----
   #include <devices/prtbase.h>
   #endif
   
@@ -169,8 +169,8 @@ diff -rc v45/include/datatypes/datatypesclass.h gg/os-include/datatypes/datatype
   
   #define	DATATYPESCLASS		"datatypesclass"
 ***************
-*** 455,459 ****
---- 459,467 ----
+*** 484,488 ****
+--- 488,496 ----
   
   /* Save data as local data format */
   #define	DTWM_RAW	1
@@ -180,12 +180,12 @@ diff -rc v45/include/datatypes/datatypesclass.h gg/os-include/datatypes/datatype
 + #endif
   
   #endif /* DATATYPES_DATATYPESCLASS_H */
-diff -rc v45/include/datatypes/pictureclass.h gg/os-include/datatypes/pictureclass.h
-*** v45/include/datatypes/pictureclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/pictureclass.h	Fri Aug 13 20:32:22 2004
+diff -rc v47/include/datatypes/pictureclass.h gg/os-include/datatypes/pictureclass.h
+*** v47/include/datatypes/pictureclass.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/pictureclass.h	Thu Feb  3 01:25:18 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -197,8 +197,8 @@ diff -rc v45/include/datatypes/pictureclass.h gg/os-include/datatypes/picturecla
   
   #define	PICTUREDTCLASS "picture.datatype"
 ***************
-*** 260,264 ****
---- 264,272 ----
+*** 278,282 ****
+--- 282,290 ----
   #ifndef ID_BODY
   #define	ID_BODY	MAKE_ID('B','O','D','Y')
   #endif /* ID_BODY */
@@ -208,12 +208,12 @@ diff -rc v45/include/datatypes/pictureclass.h gg/os-include/datatypes/picturecla
 + #endif
   
   #endif	/* DATATYPES_PICTURECLASS_H */
-diff -rc v45/include/datatypes/soundclass.h gg/os-include/datatypes/soundclass.h
-*** v45/include/datatypes/soundclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/soundclass.h	Fri Aug 13 20:33:29 2004
+diff -rc v47/include/datatypes/soundclass.h gg/os-include/datatypes/soundclass.h
+*** v47/include/datatypes/soundclass.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/soundclass.h	Thu Feb  3 01:25:40 2022
 ***************
-*** 26,31 ****
---- 26,35 ----
+*** 25,30 ****
+--- 25,34 ----
   #include <devices/timer.h>
   #endif
   
@@ -225,8 +225,8 @@ diff -rc v45/include/datatypes/soundclass.h gg/os-include/datatypes/soundclass.h
   
   #define	SOUNDDTCLASS		"sound.datatype"
 ***************
-*** 141,145 ****
---- 145,153 ----
+*** 146,150 ****
+--- 150,158 ----
   #define ID_BODY	MAKE_ID('B','O','D','Y')
   
   /*****************************************************************************/
@@ -236,12 +236,12 @@ diff -rc v45/include/datatypes/soundclass.h gg/os-include/datatypes/soundclass.h
 + #endif
   
   #endif	/* DATATYPES_SOUNDCLASS_H */
-diff -rc v45/include/datatypes/textclass.h gg/os-include/datatypes/textclass.h
-*** v45/include/datatypes/textclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/datatypes/textclass.h	Fri Aug 13 20:34:00 2004
+diff -rc v47/include/datatypes/textclass.h gg/os-include/datatypes/textclass.h
+*** v47/include/datatypes/textclass.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/datatypes/textclass.h	Thu Feb  3 01:26:00 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -253,8 +253,8 @@ diff -rc v45/include/datatypes/textclass.h gg/os-include/datatypes/textclass.h
   
   #define	TEXTDTCLASS		"text.datatype"
 ***************
-*** 79,83 ****
---- 83,91 ----
+*** 78,82 ****
+--- 82,90 ----
   #define	ID_CHRS		MAKE_ID('C','H','R','S')
   
   /*****************************************************************************/
@@ -264,12 +264,12 @@ diff -rc v45/include/datatypes/textclass.h gg/os-include/datatypes/textclass.h
 + #endif
   
   #endif	/* DATATYPES_TEXTCLASS_H */
-diff -rc v45/include/devices/audio.h gg/os-include/devices/audio.h
-*** v45/include/devices/audio.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/audio.h	Fri Aug 13 20:35:26 2004
+diff -rc v47/include/devices/audio.h gg/os-include/devices/audio.h
+*** v47/include/devices/audio.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/audio.h	Thu Feb  3 01:26:30 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/io.h>
   #endif
   
@@ -281,8 +281,8 @@ diff -rc v45/include/devices/audio.h gg/os-include/devices/audio.h
   
   #define ADHARD_CHANNELS		4
 ***************
-*** 52,56 ****
---- 56,64 ----
+*** 51,55 ****
+--- 55,63 ----
       UWORD ioa_Cycles;
       struct Message ioa_WriteMsg;
   };
@@ -292,12 +292,12 @@ diff -rc v45/include/devices/audio.h gg/os-include/devices/audio.h
 + #endif
   
   #endif	/* DEVICES_AUDIO_H */
-diff -rc v45/include/devices/bootblock.h gg/os-include/devices/bootblock.h
-*** v45/include/devices/bootblock.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/bootblock.h	Fri Aug 13 20:35:45 2004
+diff -rc v47/include/devices/bootblock.h gg/os-include/devices/bootblock.h
+*** v47/include/devices/bootblock.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/bootblock.h	Thu Feb  3 01:27:35 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include	<exec/types.h>
   #endif
   
@@ -309,8 +309,8 @@ diff -rc v45/include/devices/bootblock.h gg/os-include/devices/bootblock.h
   	UBYTE	bb_id[4];		/* 4 character identifier */
   	LONG	bb_chksum;		/* boot block checksum (balance) */
 ***************
-*** 27,31 ****
---- 31,39 ----
+*** 26,30 ****
+--- 30,38 ----
   
   #define BBNAME_DOS	0x444F5300	/* 'DOS\0' */
   #define BBNAME_KICK	0x4B49434B	/* 'KICK' */
@@ -320,12 +320,12 @@ diff -rc v45/include/devices/bootblock.h gg/os-include/devices/bootblock.h
 + #endif
   
   #endif	/* DEVICES_BOOTBLOCK_H */
-diff -rc v45/include/devices/cd.h gg/os-include/devices/cd.h
-*** v45/include/devices/cd.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/cd.h	Fri Aug 13 20:37:38 2004
+diff -rc v47/include/devices/cd.h gg/os-include/devices/cd.h
+*** v47/include/devices/cd.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/cd.h	Thu Feb  3 01:28:47 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #include <exec/nodes.h>
   
@@ -337,8 +337,8 @@ diff -rc v45/include/devices/cd.h gg/os-include/devices/cd.h
   /**************************************************************************
    *									  *
 ***************
-*** 314,318 ****
---- 318,326 ----
+*** 313,317 ****
+--- 317,325 ----
   #define ADR_ISRC       0x03   /* Q-Code is ISRC (not used)		  */
   #define ADR_HYBRID     0x05   /* This disk is a hybrid disk		  */
   
@@ -348,12 +348,12 @@ diff -rc v45/include/devices/cd.h gg/os-include/devices/cd.h
 + #endif
   
   #endif
-diff -rc v45/include/devices/clipboard.h gg/os-include/devices/clipboard.h
-*** v45/include/devices/clipboard.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/clipboard.h	Fri Aug 13 20:38:08 2004
+diff -rc v47/include/devices/clipboard.h gg/os-include/devices/clipboard.h
+*** v47/include/devices/clipboard.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/clipboard.h	Thu Feb  3 01:29:37 2022
 ***************
-*** 23,28 ****
---- 23,32 ----
+*** 22,27 ****
+--- 22,31 ----
   #include <exec/ports.h>
   #endif
   
@@ -365,8 +365,8 @@ diff -rc v45/include/devices/clipboard.h gg/os-include/devices/clipboard.h
   #define	CBD_CURRENTREADID	(CMD_NONSTD+1)
   #define	CBD_CURRENTWRITEID	(CMD_NONSTD+2)
 ***************
-*** 66,70 ****
---- 70,78 ----
+*** 65,69 ****
+--- 69,77 ----
   				/*   either CMD_UPDATE or CBD_POST */
       LONG    chm_ClipID;		/* the clip identifier of the new data */
   };
@@ -376,12 +376,40 @@ diff -rc v45/include/devices/clipboard.h gg/os-include/devices/clipboard.h
 + #endif
   
   #endif	/* DEVICES_CLIPBOARD_H */
-diff -rc v45/include/devices/conunit.h gg/os-include/devices/conunit.h
-*** v45/include/devices/conunit.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/conunit.h	Fri Aug 13 20:39:42 2004
+diff -rc v47/include/devices/console.h gg/os-include/devices/console.h
+*** v47/include/devices/console.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/console.h	Thu Feb  3 01:31:11 2022
 ***************
-*** 30,35 ****
---- 30,39 ----
+*** 17,22 ****
+--- 17,26 ----
+  #include	<exec/io.h>
+  #endif	/* EXEC_IO_H */
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /****** Console commands ******/
+  #define CD_ASKKEYMAP		(CMD_NONSTD+0)
+  #define CD_SETKEYMAP		(CMD_NONSTD+1)
+***************
+*** 104,108 ****
+--- 108,116 ----
+  	APTR cs_ScrollerGadget;
+  	UWORD cs_NumLines;
+  };
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif	/* DEVICES_CONSOLE_H */
+diff -rc v47/include/devices/conunit.h gg/os-include/devices/conunit.h
+*** v47/include/devices/conunit.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/conunit.h	Thu Feb  3 01:31:48 2022
+***************
+*** 29,34 ****
+--- 29,38 ----
   #include	<devices/inputevent.h>
   #endif
   
@@ -393,8 +421,8 @@ diff -rc v45/include/devices/conunit.h gg/os-include/devices/conunit.h
   #define	CONU_LIBRARY	-1	/* no unit, just fill in IO_DEVICE field */
   #define	CONU_STANDARD	0	/* standard unmapped console */
 ***************
-*** 96,100 ****
---- 100,108 ----
+*** 95,99 ****
+--- 99,107 ----
       UBYTE   cu_Modes[(PMB_AWM+7)/8];	/* one bit per mode */
       UBYTE   cu_RawEvents[(IECLASS_MAX+8)/8];
   };
@@ -404,12 +432,12 @@ diff -rc v45/include/devices/conunit.h gg/os-include/devices/conunit.h
 + #endif
   
   #endif	/* DEVICES_CONUNIT_H */
-diff -rc v45/include/devices/gameport.h gg/os-include/devices/gameport.h
-*** v45/include/devices/gameport.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/gameport.h	Fri Aug 13 20:40:12 2004
+diff -rc v47/include/devices/gameport.h gg/os-include/devices/gameport.h
+*** v47/include/devices/gameport.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/gameport.h	Thu Feb  3 01:32:08 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
+*** 17,22 ****
+--- 17,26 ----
   #include	<exec/io.h>
   #endif
   
@@ -421,8 +449,8 @@ diff -rc v45/include/devices/gameport.h gg/os-include/devices/gameport.h
   #define	 GPD_READEVENT	   (CMD_NONSTD+0)
   #define	 GPD_ASKCTYPE	   (CMD_NONSTD+1)
 ***************
-*** 51,55 ****
---- 55,63 ----
+*** 50,54 ****
+--- 54,62 ----
   
   /****** Errors ******/
   #define	 GPDERR_SETCTYPE   1	 /* this controller not valid at this time */
@@ -432,12 +460,12 @@ diff -rc v45/include/devices/gameport.h gg/os-include/devices/gameport.h
 + #endif
   
   #endif	/* DEVICES_GAMEPORT_H */
-diff -rc v45/include/devices/hardblocks.h gg/os-include/devices/hardblocks.h
-*** v45/include/devices/hardblocks.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/hardblocks.h	Fri Aug 13 20:40:50 2004
+diff -rc v47/include/devices/hardblocks.h gg/os-include/devices/hardblocks.h
+*** v47/include/devices/hardblocks.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/hardblocks.h	Thu Feb  3 01:32:37 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <exec/types.h>
   #endif /* EXEC_TYPES_H */
   
@@ -449,8 +477,8 @@ diff -rc v45/include/devices/hardblocks.h gg/os-include/devices/hardblocks.h
   /*--------------------------------------------------------------------
    *
 ***************
-*** 216,220 ****
---- 220,228 ----
+*** 214,218 ****
+--- 218,226 ----
   };
   
   #define	IDNAME_LOADSEG		0x4C534547	/* 'LSEG' */
@@ -460,12 +488,12 @@ diff -rc v45/include/devices/hardblocks.h gg/os-include/devices/hardblocks.h
 + #endif
   
   #endif	/* DEVICES_HARDBLOCKS_H */
-diff -rc v45/include/devices/inputevent.h gg/os-include/devices/inputevent.h
-*** v45/include/devices/inputevent.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/inputevent.h	Fri Aug 13 20:42:02 2004
+diff -rc v47/include/devices/inputevent.h gg/os-include/devices/inputevent.h
+*** v47/include/devices/inputevent.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/inputevent.h	Thu Feb  3 01:33:35 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -477,8 +505,8 @@ diff -rc v45/include/devices/inputevent.h gg/os-include/devices/inputevent.h
   
   /*  --- InputEvent.ie_Class --- */
 ***************
-*** 283,287 ****
---- 287,295 ----
+*** 282,286 ****
+--- 286,294 ----
   #define	ie_Prev1DownQual	ie_position.ie_dead.ie_prev1DownQual
   #define	ie_Prev2DownCode	ie_position.ie_dead.ie_prev2DownCode
   #define	ie_Prev2DownQual	ie_position.ie_dead.ie_prev2DownQual
@@ -488,40 +516,41 @@ diff -rc v45/include/devices/inputevent.h gg/os-include/devices/inputevent.h
 + #endif
   
   #endif	/* DEVICES_INPUTEVENT_H */
-diff -rc v45/include/devices/keymap.h gg/os-include/devices/keymap.h
-*** v45/include/devices/keymap.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/keymap.h	Fri Aug 13 20:42:30 2004
+diff -rc v47/include/devices/keymap.h gg/os-include/devices/keymap.h
+*** v47/include/devices/keymap.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/keymap.h	Thu Feb  3 01:34:04 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
-  #include <exec/lists.h>
+*** 17,22 ****
+--- 17,26 ----
+  #include	<exec/lists.h>
   #endif
   
 + #ifdef __PPC__
 + #pragma pack(2)
 + #endif
 + 
-  struct	 KeyMap {
-      UBYTE   *km_LoKeyMapTypes;
-      ULONG   *km_LoKeyMap;
-***************
-*** 70,74 ****
---- 74,82 ----
+  /* This file was sort of misplaced here in devices - most content and more
+   * is now in libraries drawer */
   
-  #define DP_2DINDEXMASK	0x0f	/* mask for index for 1st of two dead keys */
-  #define DP_2DFACSHIFT	4	/* shift for factor for 1st of two dead keys */
+***************
+*** 28,33 ****
+--- 32,41 ----
+  
+  #ifndef LIBRARIES_KEYMAP_H
+  #include	<libraries/keymap.h>
++ #endif
 + 
 + #ifdef __PPC__
 + #pragma pack()
-+ #endif
+  #endif
   
   #endif	/* DEVICES_KEYMAP_H */
-diff -rc v45/include/devices/narrator.h gg/os-include/devices/narrator.h
-*** v45/include/devices/narrator.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/narrator.h	Fri Aug 13 20:43:18 2004
+diff -rc v47/include/devices/narrator.h gg/os-include/devices/narrator.h
+*** v47/include/devices/narrator.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/narrator.h	Thu Feb  3 01:34:57 2022
 ***************
-*** 19,24 ****
---- 19,28 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <exec/io.h>
   #endif
   
@@ -533,8 +562,8 @@ diff -rc v45/include/devices/narrator.h gg/os-include/devices/narrator.h
   		/*	    Device Options	*/
   
 ***************
-*** 135,139 ****
---- 139,147 ----
+*** 133,137 ****
+--- 137,145 ----
   	};
   
   
@@ -544,12 +573,40 @@ diff -rc v45/include/devices/narrator.h gg/os-include/devices/narrator.h
 + #endif
   
   #endif	/* DEVICES_NARRATOR_H */
-diff -rc v45/include/devices/parallel.h gg/os-include/devices/parallel.h
-*** v45/include/devices/parallel.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/parallel.h	Fri Aug 13 20:43:51 2004
+diff -rc v47/include/devices/newstyle.h gg/os-include/devices/newstyle.h
+*** v47/include/devices/newstyle.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/newstyle.h	Thu Feb  3 01:46:18 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 15,20 ****
+--- 15,24 ----
+  #include <exec/types.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+   #ifndef		NSCMD_DEVICEQUERY
+          // Define general new style handling
+***************
+*** 78,82 ****
+--- 82,90 ----
+    #endif		// NSCMD_TD_READ64
+  
+   #endif	 		// NSCMD_DEVICEQUERY
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif			// SCSIDISK_NEWSTYLE_H
+diff -rc v47/include/devices/parallel.h gg/os-include/devices/parallel.h
+*** v47/include/devices/parallel.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/parallel.h	Thu Feb  3 01:46:45 2022
+***************
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/io.h>
   #endif	 /* !EXEC_IO_H */
   
@@ -557,12 +614,12 @@ diff -rc v45/include/devices/parallel.h gg/os-include/devices/parallel.h
 + #pragma pack(2)
 + #endif
 + 
-  struct IOPArray {
+   struct  IOPArray {
   	ULONG PTermArray0;
   	ULONG PTermArray1;
 ***************
-*** 99,103 ****
---- 103,111 ----
+*** 97,101 ****
+--- 101,109 ----
   #define ParErr_NotOpen		5
   #define ParErr_PortReset	6
   #define ParErr_InitErr			7
@@ -572,12 +629,12 @@ diff -rc v45/include/devices/parallel.h gg/os-include/devices/parallel.h
 + #endif
   
   #endif	/* DEVICES_PARALLEL_H */
-diff -rc v45/include/devices/printer.h gg/os-include/devices/printer.h
-*** v45/include/devices/printer.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/printer.h	Fri Aug 13 20:44:35 2004
+diff -rc v47/include/devices/printer.h gg/os-include/devices/printer.h
+*** v47/include/devices/printer.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/printer.h	Thu Feb  3 01:47:38 2022
 ***************
-*** 23,28 ****
---- 23,32 ----
+*** 33,38 ****
+--- 33,42 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -585,27 +642,27 @@ diff -rc v45/include/devices/printer.h gg/os-include/devices/printer.h
 + #pragma pack(2)
 + #endif
 + 
-  /****************************************************************************/
-  
-  /* V34-V40 commands */
+  #define  PRD_RAWWRITE      (CMD_NONSTD+0)
+  #define  PRD_PRTCOMMAND    (CMD_NONSTD+1)
+  #define  PRD_DUMPRPORT     (CMD_NONSTD+2)
 ***************
-*** 410,414 ****
---- 414,422 ----
-  	struct PrinterDeviceUnitPrefs *	io_DevUnitPrefs;
-  	struct PrinterGfxPrefs *	io_GfxPrefs;
+*** 363,367 ****
+--- 367,375 ----
+      struct PrinterDeviceUnitPrefs *io_DevUnitPrefs;
+      struct PrinterGfxPrefs *io_GfxPrefs;
   };
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
-  #endif /* DEVICES_PRINTER_H */
-diff -rc v45/include/devices/prtbase.h gg/os-include/devices/prtbase.h
-*** v45/include/devices/prtbase.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/prtbase.h	Fri Aug 13 20:45:27 2004
+  #endif
+diff -rc v47/include/devices/prtbase.h gg/os-include/devices/prtbase.h
+*** v47/include/devices/prtbase.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/prtbase.h	Sat Feb  5 09:58:41 2022
 ***************
-*** 38,43 ****
---- 38,47 ----
+*** 44,49 ****
+--- 44,53 ----
   #include <intuition/intuition.h>
   #endif
   
@@ -613,40 +670,56 @@ diff -rc v45/include/devices/prtbase.h gg/os-include/devices/prtbase.h
 + #pragma pack(2)
 + #endif
 + 
-  /****************************************************************************/
-  
-  struct DeviceData
+  #ifndef PRT_STDARGS
+  #define PRT_STDARGS __STDARGS__
+  #endif
 ***************
-*** 466,470 ****
---- 470,478 ----
+*** 152,158 ****
+  #define  pd_PIOR1 pd_ior1.pd_p1
+  #define  pd_SIOR1 pd_ior1.pd_s1
   
-  	/* .. more driver private fields follow .. */
+! 	struct timerequest pd_TIOR;	/* timer I/O request */
+  	struct MsgPort pd_IORPort;	/* and message reply port */
+  	struct Task pd_TC;		/* write task */
+          /* PRIVATE: and stack space (OBSOLETE) */
+--- 156,162 ----
+  #define  pd_PIOR1 pd_ior1.pd_p1
+  #define  pd_SIOR1 pd_ior1.pd_s1
+  
+! 	TimeRequest_Type pd_TIOR;	/* timer I/O request */
+  	struct MsgPort pd_IORPort;	/* and message reply port */
+  	struct Task pd_TC;		/* write task */
+          /* PRIVATE: and stack space (OBSOLETE) */
+***************
+*** 342,345 ****
+--- 346,353 ----
+      UWORD   ps_Revision;         /* segment revision */
+      struct  PrinterExtendedData ps_PED;   /* printer extended data */
   };
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
-  
-  #endif /* DEVICES_PRTBASE_H */
-diff -rc v45/include/devices/prtgfx.h gg/os-include/devices/prtgfx.h
-*** v45/include/devices/prtgfx.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/prtgfx.h	Fri Aug 13 20:45:55 2004
+  #endif
+diff -rc v47/include/devices/prtgfx.h gg/os-include/devices/prtgfx.h
+*** v47/include/devices/prtgfx.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/prtgfx.h	Thu Feb  3 01:52:28 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
-  #include <graphics/rastport.h>
+*** 13,18 ****
+--- 13,22 ----
+  #include <devices/prtbase.h>
   #endif
   
 + #ifdef __PPC__
 + #pragma pack(2)
 + #endif
 + 
-  /****************************************************************************/
-  
   #define	PCMYELLOW	0		/* byte index for yellow */
+  #define	PCMMAGENTA	1		/* byte index for magenta */
+  #define	PCMCYAN		2		/* byte index for cyan */
 ***************
-*** 86,90 ****
---- 90,98 ----
+*** 82,86 ****
+--- 86,94 ----
   	struct Hook *		pi_SourceHook;		/* PRIVATE - DO NOT USE! */
   	ULONG *			pi_InvertHookBuf;	/* RESERVED - DO NOT USE! */
   };
@@ -656,12 +729,12 @@ diff -rc v45/include/devices/prtgfx.h gg/os-include/devices/prtgfx.h
 + #endif
   
   #endif	/* DEVICES_PRTGFX_H */
-diff -rc v45/include/devices/scsidisk.h gg/os-include/devices/scsidisk.h
-*** v45/include/devices/scsidisk.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/scsidisk.h	Fri Aug 13 20:46:17 2004
+diff -rc v47/include/devices/scsidisk.h gg/os-include/devices/scsidisk.h
+*** v47/include/devices/scsidisk.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/scsidisk.h	Thu Feb  3 01:52:52 2022
 ***************
-*** 26,31 ****
---- 26,35 ----
+*** 14,19 ****
+--- 14,23 ----
   #include <exec/types.h>
   #endif /* EXEC_TYPES_H */
   
@@ -669,12 +742,12 @@ diff -rc v45/include/devices/scsidisk.h gg/os-include/devices/scsidisk.h
 + #pragma pack(2)
 + #endif
 + 
+  
+  
   /*--------------------------------------------------------------------
-   *
-   *   SCSI Command
 ***************
-*** 135,139 ****
---- 139,147 ----
+*** 112,116 ****
+--- 116,124 ----
   
   /*----- OpenDevice io_Error values -----*/
   #define	HFERR_NoBoard		50	/* Open failed for non-existant board */
@@ -684,12 +757,12 @@ diff -rc v45/include/devices/scsidisk.h gg/os-include/devices/scsidisk.h
 + #endif
   
   #endif	/* DEVICES_SCSIDISK_H */
-diff -rc v45/include/devices/serial.h gg/os-include/devices/serial.h
-*** v45/include/devices/serial.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/serial.h	Fri Aug 13 20:46:51 2004
+diff -rc v47/include/devices/serial.h gg/os-include/devices/serial.h
+*** v47/include/devices/serial.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/serial.h	Thu Feb  3 01:53:25 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/io.h>
   #endif /* EXEC_IO_H */
   
@@ -701,9 +774,9 @@ diff -rc v45/include/devices/serial.h gg/os-include/devices/serial.h
   		   /* to use,see serial.doc setparams */
   
 ***************
-*** 178,182 ****
---- 182,190 ----
-  #endif
+*** 175,179 ****
+--- 179,187 ----
+  
   
   #define SERIALNAME     "serial.device"
 + 
@@ -712,12 +785,12 @@ diff -rc v45/include/devices/serial.h gg/os-include/devices/serial.h
 + #endif
   
   #endif /* DEVICES_SERIAL_H */
-diff -rc v45/include/devices/timer.h gg/os-include/devices/timer.h
-*** v45/include/devices/timer.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/timer.h	Fri Aug 13 20:48:06 2004
+diff -rc v47/include/devices/timer.h gg/os-include/devices/timer.h
+*** v47/include/devices/timer.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/timer.h	Thu Feb  3 01:54:27 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <exec/io.h>
   #endif
   
@@ -729,28 +802,8 @@ diff -rc v45/include/devices/timer.h gg/os-include/devices/timer.h
   #define UNIT_MICROHZ	0
   #define UNIT_VBLANK	1
 ***************
-*** 27,36 ****
---- 31,47 ----
-  
-  #define TIMERNAME	"timer.device"
-  
-+ #ifndef _SYS_TIME_H_
-+ /* Use whatever was included first, standard (<sys/time.h>) or
-+    Amiga (<devices/timer.h>) includes. */
-  struct timeval {
-      ULONG tv_secs;
-      ULONG tv_micro;
-  };
-+ #else
-+ #define tv_secs tv_sec
-+ #define tv_micro tv_usec
-+ #endif
-  
-  struct EClockVal {
-      ULONG ev_hi;
-***************
-*** 46,50 ****
---- 57,65 ----
+*** 83,87 ****
+--- 87,95 ----
   #define TR_ADDREQUEST	CMD_NONSTD
   #define TR_GETSYSTIME	(CMD_NONSTD+1)
   #define TR_SETSYSTIME	(CMD_NONSTD+2)
@@ -760,14 +813,14 @@ diff -rc v45/include/devices/timer.h gg/os-include/devices/timer.h
 + #endif
   
   #endif /* DEVICES_TIMER_H */
-diff -rc v45/include/devices/trackdisk.h gg/os-include/devices/trackdisk.h
-*** v45/include/devices/trackdisk.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/devices/trackdisk.h	Fri Aug 13 20:49:31 2004
+diff -rc v47/include/devices/trackdisk.h gg/os-include/devices/trackdisk.h
+*** v47/include/devices/trackdisk.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/trackdisk.h	Thu Feb  3 01:54:52 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 18,23 ****
+--- 18,27 ----
   #include <exec/devices.h>
-  #endif
+  #endif 
   
 + #ifdef __PPC__
 + #pragma pack(2)
@@ -777,8 +830,8 @@ diff -rc v45/include/devices/trackdisk.h gg/os-include/devices/trackdisk.h
    *--------------------------------------------------------------------
    *
 ***************
-*** 255,259 ****
---- 259,267 ----
+*** 255,260 ****
+--- 259,268 ----
   /* flags for tdu_PubFlags */
   #define TDPB_NOCLICK	0
   #define TDPF_NOCLICK	(1L << 0)
@@ -788,12 +841,41 @@ diff -rc v45/include/devices/trackdisk.h gg/os-include/devices/trackdisk.h
 + #endif
   
   #endif	/* DEVICES_TRACKDISK_H */
-diff -rc v45/include/diskfont/diskfont.h gg/os-include/diskfont/diskfont.h
-*** v45/include/diskfont/diskfont.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/diskfont/diskfont.h	Sat Aug 14 06:42:34 2004
+  
+diff -rc v47/include/devices/trackfile.h gg/os-include/devices/trackfile.h
+*** v47/include/devices/trackfile.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/devices/trackfile.h	Thu Feb  3 01:55:16 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
+  #include <utility/tagitem.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /****************************************************************************/
+  
+  /* You can always open the control unit in order to use
+***************
+*** 181,185 ****
+--- 185,193 ----
+  };
+  
+  /***************************************************************************/
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* DEVICES_TRACKFILE_H */
+diff -rc v47/include/diskfont/diskfont.h gg/os-include/diskfont/diskfont.h
+*** v47/include/diskfont/diskfont.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/diskfont/diskfont.h	Thu Feb  3 01:55:56 2022
+***************
+*** 19,24 ****
+--- 19,28 ----
   #include <graphics/text.h>
   #endif
   
@@ -803,12 +885,12 @@ diff -rc v45/include/diskfont/diskfont.h gg/os-include/diskfont/diskfont.h
 + 
   #define     MAXFONTPATH 256   /* including null terminator */
   
-  struct FontContents {
+  /* this really belongs to <graphics/text.h> */
 ***************
-*** 107,111 ****
---- 111,119 ----
-      UWORD   afh_NumEntries;	 /* number of AvailFonts elements */
-      /* struct AvailFonts afh_AF[], or struct TAvailFonts afh_TAF[]; */
+*** 141,145 ****
+--- 145,153 ----
+      APTR                 olf_Reserved;    /* for future expansion               */
+      APTR                 olf_UserData;    /* for private use                    */
   };
 + 
 + #ifdef __PPC__
@@ -816,12 +898,12 @@ diff -rc v45/include/diskfont/diskfont.h gg/os-include/diskfont/diskfont.h
 + #endif
   
   #endif	/* DISKFONT_DISKFONT_H */
-diff -rc v45/include/diskfont/glyph.h gg/os-include/diskfont/glyph.h
-*** v45/include/diskfont/glyph.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/diskfont/glyph.h	Sat Aug 14 06:44:17 2004
+diff -rc v47/include/diskfont/glyph.h gg/os-include/diskfont/glyph.h
+*** v47/include/diskfont/glyph.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/diskfont/glyph.h	Thu Feb  3 01:57:56 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <exec/nodes.h>
   #endif
   
@@ -833,22 +915,22 @@ diff -rc v45/include/diskfont/glyph.h gg/os-include/diskfont/glyph.h
   struct GlyphEngine {
       struct Library *gle_Library; /* engine library */
 ***************
-*** 53,56 ****
---- 57,64 ----
-      UWORD   gwe_Code;		/* entry's character code value */
-      FIXED   gwe_Width;		/* character advance, as fraction of em width */
+*** 63,66 ****
+--- 67,74 ----
+      FIXED   gwe32_Width;	/* character advance, as fraction of em width */
+      ULONG   gwe32_Code;		/* entry's character code value */
   };
++ 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
-+ 
-  #endif	 /* DISKFONT_GLYPH_H */
-diff -rc v45/include/dos/datetime.h gg/os-include/dos/datetime.h
-*** v45/include/dos/datetime.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/datetime.h	Sat Aug 14 06:45:56 2004
+  #endif   /* DISKFONT_GLYPH_H */
+diff -rc v47/include/dos/datetime.h gg/os-include/dos/datetime.h
+*** v47/include/dos/datetime.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/datetime.h	Thu Feb  3 01:59:31 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <dos/dos.h>
   #endif
   
@@ -860,20 +942,20 @@ diff -rc v45/include/dos/datetime.h gg/os-include/dos/datetime.h
    *	Data structures and equates used by the V1.4 DOS functions
    * StrtoDate() and DatetoStr()
 ***************
-*** 54,58 ****
---- 58,66 ----
-  					   by locale; if locale not
-  					   available, use FORMAT_DOS
-  					   instead */
+*** 50,54 ****
+--- 54,62 ----
+  #define FORMAT_CDN	3		/* dd-mm-yy  */
+  #define FORMAT_DEF	4		/* default format for locale */
+  #define FORMAT_MAX	FORMAT_CDN
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif /* DOS_DATETIME_H */
-diff -rc v45/include/dos/dos.h gg/os-include/dos/dos.h
-*** v45/include/dos/dos.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/dos.h	Sat Aug 14 06:47:34 2004
+diff -rc v47/include/dos/dos.h gg/os-include/dos/dos.h
+*** v47/include/dos/dos.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/dos.h	Thu Feb  3 02:00:02 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -888,8 +970,8 @@ diff -rc v45/include/dos/dos.h gg/os-include/dos/dos.h
   #define	 DOSNAME  "dos.library"
   
 ***************
-*** 276,281 ****
---- 280,289 ----
+*** 281,286 ****
+--- 285,294 ----
   #define DOS_STDPKT		3	/* for doing packet-level I/O */
   #define DOS_CLI			4	/* for shell-writers, etc */
   #define DOS_RDARGS		5	/* for ReadArgs if you pass it in */
@@ -900,12 +982,12 @@ diff -rc v45/include/dos/dos.h gg/os-include/dos/dos.h
   
   #endif	/* DOS_DOS_H */
   
-diff -rc v45/include/dos/dosasl.h gg/os-include/dos/dosasl.h
-*** v45/include/dos/dosasl.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/dosasl.h	Sat Aug 14 06:48:12 2004
+diff -rc v47/include/dos/dosasl.h gg/os-include/dos/dosasl.h
+*** v47/include/dos/dosasl.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/dosasl.h	Thu Feb  3 02:00:23 2022
 ***************
-*** 24,29 ****
---- 24,33 ----
+*** 23,28 ****
+--- 23,32 ----
   #include <dos/dos.h>
   #endif
   
@@ -917,8 +999,8 @@ diff -rc v45/include/dos/dosasl.h gg/os-include/dos/dosasl.h
   /***********************************************************************
   ************************ PATTERN MATCHING ******************************
 ***************
-*** 149,153 ****
---- 153,161 ----
+*** 148,152 ****
+--- 152,160 ----
   #define ERROR_BUFFER_OVERFLOW	303	/* User or internal buffer overflow */
   #define ERROR_BREAK		304	/* A break character was received */
   #define ERROR_NOT_EXECUTABLE	305	/* A file has E bit cleared */
@@ -928,9 +1010,9 @@ diff -rc v45/include/dos/dosasl.h gg/os-include/dos/dosasl.h
 + #endif
   
   #endif /* DOS_DOSASL_H */
-diff -rc v45/include/dos/dosextens.h gg/os-include/dos/dosextens.h
-*** v45/include/dos/dosextens.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/dosextens.h	Sat Aug 14 06:49:00 2004
+diff -rc v47/include/dos/dosextens.h gg/os-include/dos/dosextens.h
+*** v47/include/dos/dosextens.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/dosextens.h	Sat Feb  5 10:17:24 2022
 ***************
 *** 30,35 ****
 --- 30,39 ----
@@ -945,8 +1027,25 @@ diff -rc v45/include/dos/dosextens.h gg/os-include/dos/dosextens.h
   /* Create and Device Proc returns pointer to the MsgPort in this structure */
   /* dev_proc = (struct Process *) (DeviceProc(..) - sizeof(struct Task)); */
 ***************
-*** 490,494 ****
---- 494,502 ----
+*** 245,251 ****
+      LONG    dl_A5;
+      LONG    dl_A6;
+      struct ErrorString *dl_Errors;	  /* PRIVATE pointer to array of error msgs */
+!     struct timerequest *dl_TimeReq;	  /* PRIVATE pointer to timer request */
+      struct Library     *dl_UtilityBase;   /* PRIVATE ptr to utility library */
+      struct Library     *dl_IntuitionBase; /* PRIVATE ptr to intuition library */
+  };  /*	DosLibrary */
+--- 249,255 ----
+      LONG    dl_A5;
+      LONG    dl_A6;
+      struct ErrorString *dl_Errors;	  /* PRIVATE pointer to array of error msgs */
+!     TimeRequest_Type   *dl_TimeReq;	  /* PRIVATE pointer to timer request */
+      struct Library     *dl_UtilityBase;   /* PRIVATE ptr to utility library */
+      struct Library     *dl_IntuitionBase; /* PRIVATE ptr to intuition library */
+  };  /*	DosLibrary */
+***************
+*** 493,497 ****
+--- 497,505 ----
   #define ST_FILE		-3	/* must be negative for FIB! */
   #define ST_LINKFILE	-4	/* hard link to file */
   #define ST_PIPEFILE	-5	/* for pipes that support ExamineFH */
@@ -956,12 +1055,12 @@ diff -rc v45/include/dos/dosextens.h gg/os-include/dos/dosextens.h
 + #endif
   
   #endif	/* DOS_DOSEXTENS_H */
-diff -rc v45/include/dos/exall.h gg/os-include/dos/exall.h
-*** v45/include/dos/exall.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/exall.h	Sat Aug 14 06:53:25 2004
+diff -rc v47/include/dos/exall.h gg/os-include/dos/exall.h
+*** v47/include/dos/exall.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/exall.h	Thu Feb  3 02:01:41 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <utility/hooks.h>
   #endif
   
@@ -973,8 +1072,8 @@ diff -rc v45/include/dos/exall.h gg/os-include/dos/exall.h
   /* will return an error if passed ED_OWNER.  If you get ERROR_BAD_NUMBER,    */
   /* retry with ED_COMMENT to get everything but owner info.  All filesystems  */
 ***************
-*** 73,77 ****
---- 77,85 ----
+*** 72,76 ****
+--- 76,84 ----
   	UBYTE  *eac_MatchString; /* wildcard string for pattern match or NULL */
   	struct Hook *eac_MatchFunc; /* optional private wildcard function     */
   };
@@ -984,13 +1083,13 @@ diff -rc v45/include/dos/exall.h gg/os-include/dos/exall.h
 + #endif
   
   #endif /* DOS_EXALL_H */
-diff -rc v45/include/dos/filehandler.h gg/os-include/dos/filehandler.h
-*** v45/include/dos/filehandler.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/filehandler.h	Sat Aug 14 06:53:46 2004
+diff -rc v47/include/dos/filehandler.h gg/os-include/dos/filehandler.h
+*** v47/include/dos/filehandler.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/filehandler.h	Thu Feb  3 02:02:07 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
-  #include <dos/dos.h>
+*** 17,22 ****
+--- 17,26 ----
+  #include "dos/dos.h"
   #endif
   
 + #ifdef __PPC__
@@ -1001,8 +1100,8 @@ diff -rc v45/include/dos/filehandler.h gg/os-include/dos/filehandler.h
   /* The disk "environment" is a longword array that describes the
    * disk geometry.  It is variable sized, with the length at the beginning.
 ***************
-*** 120,124 ****
---- 124,132 ----
+*** 128,132 ****
+--- 132,140 ----
   				 */
       BSTR	dn_Name;	/* the node name, e.g. '\3','D','F','3' */
   };
@@ -1012,12 +1111,12 @@ diff -rc v45/include/dos/filehandler.h gg/os-include/dos/filehandler.h
 + #endif
   
   #endif	/* DOS_FILEHANDLER_H */
-diff -rc v45/include/dos/notify.h gg/os-include/dos/notify.h
-*** v45/include/dos/notify.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/notify.h	Sat Aug 14 06:54:45 2004
+diff -rc v47/include/dos/notify.h gg/os-include/dos/notify.h
+*** v47/include/dos/notify.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/notify.h	Thu Feb  3 02:02:26 2022
 ***************
-*** 24,29 ****
---- 24,33 ----
+*** 22,27 ****
+--- 22,31 ----
   #include <exec/tasks.h>
   #endif
   
@@ -1029,8 +1128,8 @@ diff -rc v45/include/dos/notify.h gg/os-include/dos/notify.h
   /* use of Class and code is discouraged for the time being - we might want to
      change things */
 ***************
-*** 93,97 ****
---- 97,105 ----
+*** 91,95 ****
+--- 95,103 ----
   
   /* Flags reserved for private use by the handler: */
   #define NR_HANDLER_FLAGS	0xffff0000
@@ -1040,12 +1139,12 @@ diff -rc v45/include/dos/notify.h gg/os-include/dos/notify.h
 + #endif
   
   #endif /* DOS_NOTIFY_H */
-diff -rc v45/include/dos/rdargs.h gg/os-include/dos/rdargs.h
-*** v45/include/dos/rdargs.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/rdargs.h	Sat Aug 14 06:55:07 2004
+diff -rc v47/include/dos/rdargs.h gg/os-include/dos/rdargs.h
+*** v47/include/dos/rdargs.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/rdargs.h	Thu Feb  3 02:03:13 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <exec/nodes.h>
   #endif
   
@@ -1057,8 +1156,8 @@ diff -rc v45/include/dos/rdargs.h gg/os-include/dos/rdargs.h
    *
    * The CSource data structure defines the input source for "ReadItem()"
 ***************
-*** 120,124 ****
---- 124,132 ----
+*** 121,125 ****
+--- 125,133 ----
    * usage.  Applications should allow "a lot" of stack to use ReadArgs().
    **********************************************************************/
   #define MAX_MULTIARGS		128
@@ -1068,12 +1167,12 @@ diff -rc v45/include/dos/rdargs.h gg/os-include/dos/rdargs.h
 + #endif
   
   #endif /* DOS_RDARGS_H */
-diff -rc v45/include/dos/record.h gg/os-include/dos/record.h
-*** v45/include/dos/record.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/record.h	Sat Aug 14 06:55:22 2004
+diff -rc v47/include/dos/record.h gg/os-include/dos/record.h
+*** v47/include/dos/record.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/record.h	Thu Feb  3 02:03:30 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <dos/dos.h>
   #endif
   
@@ -1085,8 +1184,8 @@ diff -rc v45/include/dos/record.h gg/os-include/dos/record.h
   #define REC_EXCLUSIVE		0
   #define REC_EXCLUSIVE_IMMED	1
 ***************
-*** 30,34 ****
---- 34,42 ----
+*** 29,33 ****
+--- 33,41 ----
   	ULONG	rec_Length;	/* length of file to be locked */
   	ULONG	rec_Mode;	/* Type of lock */
   };
@@ -1096,12 +1195,40 @@ diff -rc v45/include/dos/record.h gg/os-include/dos/record.h
 + #endif
   
   #endif /* DOS_RECORD_H */
-diff -rc v45/include/dos/var.h gg/os-include/dos/var.h
-*** v45/include/dos/var.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/dos/var.h	Sat Aug 14 06:57:32 2004
+diff -rc v47/include/dos/shell.h gg/os-include/dos/shell.h
+*** v47/include/dos/shell.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/shell.h	Thu Feb  3 02:04:44 2022
 ***************
-*** 17,22 ****
---- 17,26 ----
+*** 27,32 ****
+--- 27,36 ----
+  #include <dos/dos.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /* DOS Processes started from the CLI via RUN or NEWCLI have this additional
+   * set to data associated with them. This is the extended structure that
+   * includes additional interfaces to communicate with the shell
+***************
+*** 101,105 ****
+--- 105,113 ----
+  
+  /* Read a string, with TAB expansion, from the console */
+  #define SHELL_METH_FGETS          MAKE_SID('G','E','T','S')
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif	/* DOS_SHELL_H */
+diff -rc v47/include/dos/var.h gg/os-include/dos/var.h
+*** v47/include/dos/var.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/dos/var.h	Thu Feb  3 02:05:38 2022
+***************
+*** 16,21 ****
+--- 16,25 ----
   #include <exec/nodes.h>
   #endif
   
@@ -1113,8 +1240,8 @@ diff -rc v45/include/dos/var.h gg/os-include/dos/var.h
   /* Do NOT allocate yourself, use SetVar()!!! This structure may grow in */
   /* future releases!  The list should be left in alphabetical order, and */
 ***************
-*** 57,61 ****
---- 61,69 ----
+*** 56,60 ****
+--- 60,68 ----
   /* this causes SetVar to affect ENVARC: as well as ENV:.	*/
   #define GVB_SAVE_VAR		12	/* only with GVF_GLOBAL_VAR */
   #define GVF_SAVE_VAR		0x1000
@@ -1124,41 +1251,13 @@ diff -rc v45/include/dos/var.h gg/os-include/dos/var.h
 + #endif
   
   #endif /* DOS_VAR_H */
-diff -rc v45/include/exec/avl.h gg/os-include/exec/avl.h
-*** v45/include/exec/avl.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/avl.h	Sat Aug 14 06:59:47 2004
-***************
-*** 14,19 ****
---- 14,23 ----
-  #include <exec/types.h>
-  #endif /* EXEC_TYPES_H */
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  /* Don't even think about the contents of this structure. Just embed it
-   * and reference it
-   */
-***************
-*** 36,40 ****
---- 40,48 ----
-  typedef APTR AVLNODECOMP;
-  typedef APTR AVLKEYCOMP;
-  #endif /* __SASC */
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* EXEC_AVL_H */
-diff -rc v45/include/exec/devices.h gg/os-include/exec/devices.h
-*** v45/include/exec/devices.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/devices.h	Sat Aug 14 07:00:29 2004
+diff -rc v47/include/exec/devices.h gg/os-include/exec/devices.h
+*** v47/include/exec/devices.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/devices.h	Thu Feb  3 02:06:53 2022
 ***************
 *** 18,23 ****
 --- 18,27 ----
-  #include <exec/ports.h>
+  #include "exec/ports.h"
   #endif /* EXEC_PORTS_H */
   
 + #ifdef __PPC__
@@ -1180,12 +1279,12 @@ diff -rc v45/include/exec/devices.h gg/os-include/exec/devices.h
 + #endif
   
   #endif	/* EXEC_DEVICES_H */
-diff -rc v45/include/exec/execbase.h gg/os-include/exec/execbase.h
-*** v45/include/exec/execbase.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/execbase.h	Sat Aug 14 07:01:39 2004
+diff -rc v47/include/exec/execbase.h gg/os-include/exec/execbase.h
+*** v47/include/exec/execbase.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/execbase.h	Thu Feb  3 02:07:38 2022
 ***************
-*** 26,31 ****
---- 26,35 ----
+*** 25,30 ****
+--- 25,34 ----
   #include <exec/tasks.h>
   #endif /* EXEC_TASKS_H */
   
@@ -1208,12 +1307,12 @@ diff -rc v45/include/exec/execbase.h gg/os-include/exec/execbase.h
 + #endif
   
   #endif	/* EXEC_EXECBASE_H */
-diff -rc v45/include/exec/interrupts.h gg/os-include/exec/interrupts.h
-*** v45/include/exec/interrupts.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/interrupts.h	Sat Aug 14 07:02:21 2004
+diff -rc v47/include/exec/interrupts.h gg/os-include/exec/interrupts.h
+*** v47/include/exec/interrupts.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/interrupts.h	Thu Feb  3 02:08:06 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <exec/lists.h>
   #endif /* EXEC_LISTS_H */
   
@@ -1225,8 +1324,8 @@ diff -rc v45/include/exec/interrupts.h gg/os-include/exec/interrupts.h
   struct Interrupt {
       struct  Node is_Node;
 ***************
-*** 43,47 ****
---- 47,55 ----
+*** 42,46 ****
+--- 46,54 ----
   /* this is a fake INT definition, used only for AddIntServer and the like */
   #define INTB_NMI	15
   #define INTF_NMI	(1L<<15)
@@ -1236,12 +1335,12 @@ diff -rc v45/include/exec/interrupts.h gg/os-include/exec/interrupts.h
 + #endif
   
   #endif	/* EXEC_INTERRUPTS_H */
-diff -rc v45/include/exec/io.h gg/os-include/exec/io.h
-*** v45/include/exec/io.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/io.h	Sat Aug 14 07:02:48 2004
+diff -rc v47/include/exec/io.h gg/os-include/exec/io.h
+*** v47/include/exec/io.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/io.h	Thu Feb  3 02:08:34 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/ports.h>
   #endif /* EXEC_PORTS_H */
   
@@ -1253,8 +1352,8 @@ diff -rc v45/include/exec/io.h gg/os-include/exec/io.h
   struct IORequest {
       struct  Message io_Message;
 ***************
-*** 57,61 ****
---- 61,69 ----
+*** 56,60 ****
+--- 60,68 ----
   #define CMD_FLUSH	8
   
   #define CMD_NONSTD	9
@@ -1264,12 +1363,12 @@ diff -rc v45/include/exec/io.h gg/os-include/exec/io.h
 + #endif
   
   #endif	/* EXEC_IO_H */
-diff -rc v45/include/exec/libraries.h gg/os-include/exec/libraries.h
-*** v45/include/exec/libraries.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/libraries.h	Sat Aug 14 07:03:43 2004
+diff -rc v47/include/exec/libraries.h gg/os-include/exec/libraries.h
+*** v47/include/exec/libraries.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/libraries.h	Thu Feb  3 02:08:54 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/nodes.h>
   #endif /* EXEC_NODES_H */
   
@@ -1281,8 +1380,8 @@ diff -rc v45/include/exec/libraries.h gg/os-include/exec/libraries.h
   /*------ Special Constants ---------------------------------------*/
   #define LIB_VECTSIZE	6	/* Each library entry takes 6 bytes */
 ***************
-*** 62,66 ****
---- 66,74 ----
+*** 61,65 ****
+--- 65,73 ----
   #define lh_IdString	lib_IdString
   #define lh_Sum		lib_Sum
   #define lh_OpenCnt	lib_OpenCnt
@@ -1292,9 +1391,9 @@ diff -rc v45/include/exec/libraries.h gg/os-include/exec/libraries.h
 + #endif
   
   #endif	/* EXEC_LIBRARIES_H */
-diff -rc v45/include/exec/lists.h gg/os-include/exec/lists.h
-*** v45/include/exec/lists.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/lists.h	Sat Aug 14 07:04:09 2004
+diff -rc v47/include/exec/lists.h gg/os-include/exec/lists.h
+*** v47/include/exec/lists.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/lists.h	Thu Feb  3 02:09:22 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -1320,12 +1419,12 @@ diff -rc v45/include/exec/lists.h gg/os-include/exec/lists.h
 + #endif
   
   #endif	/* EXEC_LISTS_H */
-diff -rc v45/include/exec/memory.h gg/os-include/exec/memory.h
-*** v45/include/exec/memory.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/memory.h	Sat Aug 14 07:04:43 2004
+diff -rc v47/include/exec/memory.h gg/os-include/exec/memory.h
+*** v47/include/exec/memory.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/memory.h	Thu Feb  3 02:09:45 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/nodes.h>
   #endif /* EXEC_NODES_H */
   
@@ -1337,8 +1436,8 @@ diff -rc v45/include/exec/memory.h gg/os-include/exec/memory.h
   /****** MemChunk ****************************************************/
   
 ***************
-*** 100,104 ****
---- 104,112 ----
+*** 99,103 ****
+--- 103,111 ----
   #define	MEM_DID_NOTHING	(0)	/* Nothing we could do... */
   #define	MEM_ALL_DONE	(-1)	/* We did all we could do */
   #define	MEM_TRY_AGAIN	(1)	/* We did some, try the allocation again */
@@ -1348,9 +1447,9 @@ diff -rc v45/include/exec/memory.h gg/os-include/exec/memory.h
 + #endif
   
   #endif	/* EXEC_MEMORY_H */
-diff -rc v45/include/exec/nodes.h gg/os-include/exec/nodes.h
-*** v45/include/exec/nodes.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/nodes.h	Sat Aug 14 07:05:18 2004
+diff -rc v47/include/exec/nodes.h gg/os-include/exec/nodes.h
+*** v47/include/exec/nodes.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/nodes.h	Thu Feb  3 02:10:06 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -1376,12 +1475,12 @@ diff -rc v45/include/exec/nodes.h gg/os-include/exec/nodes.h
 + #endif
   
   #endif	/* EXEC_NODES_H */
-diff -rc v45/include/exec/ports.h gg/os-include/exec/ports.h
-*** v45/include/exec/ports.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/ports.h	Sat Aug 14 07:05:34 2004
+diff -rc v47/include/exec/ports.h gg/os-include/exec/ports.h
+*** v47/include/exec/ports.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/ports.h	Thu Feb  3 02:10:26 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <exec/tasks.h>
   #endif /* EXEC_TASKS_H */
   
@@ -1393,8 +1492,8 @@ diff -rc v45/include/exec/ports.h gg/os-include/exec/ports.h
   /****** MsgPort *****************************************************/
   
 ***************
-*** 51,55 ****
---- 55,63 ----
+*** 50,54 ****
+--- 54,62 ----
   				    /* (include the size of the Message */
   				    /* structure in the length) */
   };
@@ -1404,12 +1503,12 @@ diff -rc v45/include/exec/ports.h gg/os-include/exec/ports.h
 + #endif
   
   #endif	/* EXEC_PORTS_H */
-diff -rc v45/include/exec/resident.h gg/os-include/exec/resident.h
-*** v45/include/exec/resident.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/resident.h	Sat Aug 14 07:05:57 2004
+diff -rc v47/include/exec/resident.h gg/os-include/exec/resident.h
+*** v47/include/exec/resident.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/resident.h	Thu Feb  3 02:10:46 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif /* EXEC_TYPES_H */
   
@@ -1421,8 +1520,8 @@ diff -rc v45/include/exec/resident.h gg/os-include/exec/resident.h
   struct Resident {
       UWORD rt_MatchWord;	/* word to match on (ILLEGAL)	*/
 ***************
-*** 39,43 ****
---- 43,51 ----
+*** 38,42 ****
+--- 42,50 ----
   /* #define RTM_WHEN	   3 */
   #define RTW_NEVER	0
   #define RTW_COLDSTART	1
@@ -1432,9 +1531,9 @@ diff -rc v45/include/exec/resident.h gg/os-include/exec/resident.h
 + #endif
   
   #endif	/* EXEC_RESIDENT_H */
-diff -rc v45/include/exec/semaphores.h gg/os-include/exec/semaphores.h
-*** v45/include/exec/semaphores.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/semaphores.h	Sat Aug 14 07:06:22 2004
+diff -rc v47/include/exec/semaphores.h gg/os-include/exec/semaphores.h
+*** v47/include/exec/semaphores.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/semaphores.h	Thu Feb  3 02:11:06 2022
 ***************
 *** 26,31 ****
 --- 26,35 ----
@@ -1460,9 +1559,9 @@ diff -rc v45/include/exec/semaphores.h gg/os-include/exec/semaphores.h
 + #endif
   
   #endif	/* EXEC_SEMAPHORES_H */
-diff -rc v45/include/exec/tasks.h gg/os-include/exec/tasks.h
-*** v45/include/exec/tasks.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/exec/tasks.h	Sat Aug 14 07:06:45 2004
+diff -rc v47/include/exec/tasks.h gg/os-include/exec/tasks.h
+*** v47/include/exec/tasks.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/exec/tasks.h	Thu Feb  3 02:11:27 2022
 ***************
 *** 18,23 ****
 --- 18,27 ----
@@ -1477,8 +1576,8 @@ diff -rc v45/include/exec/tasks.h gg/os-include/exec/tasks.h
   /* Please use Exec functions to modify task structure fields, where available.
    */
 ***************
-*** 95,99 ****
---- 99,107 ----
+*** 94,98 ****
+--- 98,106 ----
   #define SIGF_INTUITION	(1L<<5)
   #define	SIGF_NET	(1L<<7)
   #define SIGF_DOS	(1L<<8)
@@ -1488,12 +1587,12 @@ diff -rc v45/include/exec/tasks.h gg/os-include/exec/tasks.h
 + #endif
   
   #endif	/* EXEC_TASKS_H */
-diff -rc v45/include/gadgets/colorwheel.h gg/os-include/gadgets/colorwheel.h
-*** v45/include/gadgets/colorwheel.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/colorwheel.h	Sat Aug 14 07:09:33 2004
+diff -rc v47/include/gadgets/colorwheel.h gg/os-include/gadgets/colorwheel.h
+*** v47/include/gadgets/colorwheel.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/colorwheel.h	Thu Feb  3 02:13:21 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -1505,8 +1604,8 @@ diff -rc v45/include/gadgets/colorwheel.h gg/os-include/gadgets/colorwheel.h
   
   
 ***************
-*** 54,58 ****
---- 58,66 ----
+*** 53,57 ****
+--- 57,65 ----
   #define WHEEL_MaxPens	     (WHEEL_Dummy+14)  /* max # of pens to allocate */
   
   /*****************************************************************************/
@@ -1516,9 +1615,38 @@ diff -rc v45/include/gadgets/colorwheel.h gg/os-include/gadgets/colorwheel.h
 + #endif
   
   #endif /* GADGETS_COLORWHEEL_H */
-diff -rc v45/include/gadgets/getfile.h gg/os-include/gadgets/getfile.h
-*** v45/include/gadgets/getfile.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/getfile.h	Sat Aug 14 07:10:24 2004
+diff -rc v47/include/gadgets/getcolor.h gg/os-include/gadgets/getcolor.h
+*** v47/include/gadgets/getcolor.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/getcolor.h	Thu Feb  3 02:14:30 2022
+***************
+*** 20,25 ****
+--- 20,29 ----
+  #include <intuition/gadgetclass.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*****************************************************************************/
+  
+  /* Attributes defined by the getcolor.gadget class
+***************
+*** 110,115 ****
+--- 114,123 ----
+  
+  #ifndef GetColorEnd
+  #define GetColorEnd TAG_END)
++ #endif
++ 
++ #ifdef __PPC__
++ #pragma pack()
+  #endif
+  
+  #endif /* GADGETS_GETCOLOR_H */
+diff -rc v47/include/gadgets/getfile.h gg/os-include/gadgets/getfile.h
+*** v47/include/gadgets/getfile.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/getfile.h	Thu Feb  3 02:14:50 2022
 ***************
 *** 20,25 ****
 --- 20,29 ----
@@ -1544,12 +1672,12 @@ diff -rc v45/include/gadgets/getfile.h gg/os-include/gadgets/getfile.h
 + #endif
   
   #endif /* GADGETS_GETFILE_H */
-diff -rc v45/include/gadgets/getfont.h gg/os-include/gadgets/getfont.h
-*** v45/include/gadgets/getfont.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/getfont.h	Sat Aug 14 07:10:41 2004
+diff -rc v47/include/gadgets/getfont.h gg/os-include/gadgets/getfont.h
+*** v47/include/gadgets/getfont.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/getfont.h	Thu Feb  3 02:15:11 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <intuition/gadgetclass.h>
   #endif
   
@@ -1561,8 +1689,8 @@ diff -rc v45/include/gadgets/getfont.h gg/os-include/gadgets/getfont.h
   
   /* Attributes defined by the getfont.gadget class
 ***************
-*** 114,118 ****
---- 118,126 ----
+*** 134,138 ****
+--- 138,146 ----
   };
   
   #define gfRequestFont(obj, win)	DoMethod(obj, GFONT_REQUEST, win)
@@ -1572,9 +1700,9 @@ diff -rc v45/include/gadgets/getfont.h gg/os-include/gadgets/getfont.h
 + #endif
   
   #endif /* GADGETS_GETFONT_H */
-diff -rc v45/include/gadgets/getscreenmode.h gg/os-include/gadgets/getscreenmode.h
-*** v45/include/gadgets/getscreenmode.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/getscreenmode.h	Sat Aug 14 07:11:06 2004
+diff -rc v47/include/gadgets/getscreenmode.h gg/os-include/gadgets/getscreenmode.h
+*** v47/include/gadgets/getscreenmode.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/getscreenmode.h	Thu Feb  3 02:15:33 2022
 ***************
 *** 20,25 ****
 --- 20,29 ----
@@ -1600,12 +1728,12 @@ diff -rc v45/include/gadgets/getscreenmode.h gg/os-include/gadgets/getscreenmode
 + #endif
   
   #endif /* GADGETS_GETSCREENMODE_H */
-diff -rc v45/include/gadgets/layout.h gg/os-include/gadgets/layout.h
-*** v45/include/gadgets/layout.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/layout.h	Sat Aug 14 07:11:42 2004
+diff -rc v47/include/gadgets/layout.h gg/os-include/gadgets/layout.h
+*** v47/include/gadgets/layout.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/layout.h	Thu Feb  3 02:16:10 2022
 ***************
-*** 24,29 ****
---- 24,33 ----
+*** 23,28 ****
+--- 23,32 ----
   #include <images/bevel.h>
   #endif
   
@@ -1617,23 +1745,23 @@ diff -rc v45/include/gadgets/layout.h gg/os-include/gadgets/layout.h
   
   struct WeightObject	/* filled in by layout.gadget for weighbar */
 ***************
-*** 377,381 ****
---- 381,389 ----
+*** 390,394 ****
+--- 394,402 ----
   
-  #define PAGE_Transparent		(PAGE_Dummy+6)
-  	/* (BOOL) PRIVATE */
+  #define PAGE_NoDispose			(PAGE_Dummy+7)
+  	/* (BOOL) v53.22 and V47 */
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif  /* GADGETS_LAYOUT_H */
-diff -rc v45/include/gadgets/listbrowser.h gg/os-include/gadgets/listbrowser.h
-*** v45/include/gadgets/listbrowser.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/listbrowser.h	Sat Aug 14 07:12:06 2004
+diff -rc v47/include/gadgets/listbrowser.h gg/os-include/gadgets/listbrowser.h
+*** v47/include/gadgets/listbrowser.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/listbrowser.h	Thu Feb  3 02:16:40 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <intuition/gadgetclass.h>
   #endif
   
@@ -1645,8 +1773,8 @@ diff -rc v45/include/gadgets/listbrowser.h gg/os-include/gadgets/listbrowser.h
   
   /* LBM_ADDNODE creates a listbrowser node and inserts it to the currently
 ***************
-*** 512,516 ****
---- 516,524 ----
+*** 526,530 ****
+--- 530,538 ----
   #define LBRE_COLUMNADJUST 256
   
   /*****************************************************************************/
@@ -1656,9 +1784,65 @@ diff -rc v45/include/gadgets/listbrowser.h gg/os-include/gadgets/listbrowser.h
 + #endif
   
   #endif /* GADGETS_LISTBROWSER_H */
-diff -rc v45/include/gadgets/texteditor.h gg/os-include/gadgets/texteditor.h
-*** v45/include/gadgets/texteditor.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/gadgets/texteditor.h	Sat Aug 14 07:13:47 2004
+diff -rc v47/include/gadgets/palette.h gg/os-include/gadgets/palette.h
+*** v47/include/gadgets/palette.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/palette.h	Thu Feb  3 02:20:16 2022
+***************
+*** 19,24 ****
+--- 19,28 ----
+  #include <intuition/gadgetclass.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*****************************************************************************/
+  
+  /* Additional attributes defined by the Palette class
+***************
+*** 77,81 ****
+--- 81,89 ----
+  #define PALETTE_ColorOffset PALETTE_ColourOffset
+  #define PALETTE_ColorTable PALETTE_ColourTable
+  #define PALETTE_NumColors PALETTE_NumColours
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* GADGETS_PALETTE_H */
+diff -rc v47/include/gadgets/tabs.h gg/os-include/gadgets/tabs.h
+*** v47/include/gadgets/tabs.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/tabs.h	Thu Feb  3 02:22:36 2022
+***************
+*** 25,30 ****
+--- 25,34 ----
+  #include <intuition/gadgetclass.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*****************************************************************************/
+  
+  #define	TL_TEXTPEN		0
+***************
+*** 56,60 ****
+--- 60,68 ----
+      /* (LONG) Current tab */
+  
+  /*****************************************************************************/
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* GADGETS_TABS_H */
+diff -rc v47/include/gadgets/texteditor.h gg/os-include/gadgets/texteditor.h
+*** v47/include/gadgets/texteditor.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/gadgets/texteditor.h	Sat Feb  5 10:15:35 2022
 ***************
 *** 24,29 ****
 --- 24,33 ----
@@ -1673,23 +1857,40 @@ diff -rc v45/include/gadgets/texteditor.h gg/os-include/gadgets/texteditor.h
   
   #define   TEXTEDITOR_Dummy   (REACTION_Dummy + 0x26000)
 ***************
-*** 150,154 ****
---- 154,162 ----
-  #define LNSF_Bottom          (1<<LNSB_Bottom)
-  #define LNSF_StrikeThru      (1<<LNSB_StrikeThru)
-  #define LNSF_Thick           (1<<LNSB_Thick)
+*** 221,227 ****
+  	UWORD Qualifier; /* copied from InputEvent */
+  	WORD X;		/* mouse position relative to upper left corner of the leftbar area for this line */
+  	WORD Y;
+! 	struct timeval TimeStamp; /* copied from InputEvent */
+  };
+  
+  
+--- 225,231 ----
+  	UWORD Qualifier; /* copied from InputEvent */
+  	WORD X;		/* mouse position relative to upper left corner of the leftbar area for this line */
+  	WORD Y;
+! 	TimeVal_Type TimeStamp; /* copied from InputEvent */
+  };
+  
+  
+***************
+*** 248,252 ****
+--- 252,260 ----
+  #define LINEENDING_CR       1
+  #define LINEENDING_CRLF     2
+  #define LINEENDING_ASIMPORT 3 /* only meaningful for GA_TEXTEDITOR_LineEndingExport*/
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif /* GADGETS_TEXTEDITOR_H */
-diff -rc v45/include/graphics/clip.h gg/os-include/graphics/clip.h
-*** v45/include/graphics/clip.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/clip.h	Sat Aug 14 07:14:32 2004
+diff -rc v47/include/graphics/clip.h gg/os-include/graphics/clip.h
+*** v47/include/graphics/clip.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/clip.h	Thu Feb  3 02:24:46 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 23,28 ****
+--- 23,32 ----
   #include <utility/hooks.h>
   #endif
   
@@ -1699,10 +1900,10 @@ diff -rc v45/include/graphics/clip.h gg/os-include/graphics/clip.h
 + 
   #define NEWLOCKS
   
-  struct Layer
+  /*
 ***************
-*** 79,83 ****
---- 83,91 ----
+*** 136,140 ****
+--- 140,148 ----
   #define ISLESSY 2
   #define ISGRTRX 4
   #define ISGRTRY 8
@@ -1711,13 +1912,13 @@ diff -rc v45/include/graphics/clip.h gg/os-include/graphics/clip.h
 + #pragma pack()
 + #endif
   
-  #endif	/* GRAPHICS_CLIP_H */
-diff -rc v45/include/graphics/copper.h gg/os-include/graphics/copper.h
-*** v45/include/graphics/copper.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/copper.h	Sat Aug 14 07:15:10 2004
+  #endif  /* GRAPHICS_CLIP_H */
+diff -rc v47/include/graphics/copper.h gg/os-include/graphics/copper.h
+*** v47/include/graphics/copper.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/copper.h	Thu Feb  3 02:25:24 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif
   
@@ -1725,12 +1926,12 @@ diff -rc v45/include/graphics/copper.h gg/os-include/graphics/copper.h
 + #pragma pack(2)
 + #endif
 + 
-  #define COPPER_MOVE 0	    /* pseude opcode for move #XXXX,dir */
-  #define COPPER_WAIT 1	    /* pseudo opcode for wait y,x */
-  #define CPRNXTBUF   2	    /* continue processing with next buffer */
+  #define COPPER_MOVE 0       /* pseude opcode for move #XXXX,dir */
+  #define COPPER_WAIT 1       /* pseudo opcode for wait y,x */
+  #define CPRNXTBUF   2       /* continue processing with next buffer */
 ***************
-*** 112,116 ****
---- 116,124 ----
+*** 111,115 ****
+--- 115,123 ----
       UWORD wait_forever[6];
       UWORD   sprstop[8];
   };
@@ -1740,9 +1941,9 @@ diff -rc v45/include/graphics/copper.h gg/os-include/graphics/copper.h
 + #endif
   
   #endif	/* GRAPHICS_COPPER_H */
-diff -rc v45/include/graphics/displayinfo.h gg/os-include/graphics/displayinfo.h
-*** v45/include/graphics/displayinfo.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/displayinfo.h	Sat Aug 14 07:15:44 2004
+diff -rc v47/include/graphics/displayinfo.h gg/os-include/graphics/displayinfo.h
+*** v47/include/graphics/displayinfo.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/displayinfo.h	Thu Feb  3 02:25:59 2022
 ***************
 *** 30,35 ****
 --- 30,39 ----
@@ -1768,12 +1969,12 @@ diff -rc v45/include/graphics/displayinfo.h gg/os-include/graphics/displayinfo.h
 + #endif
   
   #endif	/* GRAPHICS_DISPLAYINFO_H */
-diff -rc v45/include/graphics/gels.h gg/os-include/graphics/gels.h
-*** v45/include/graphics/gels.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/gels.h	Sat Aug 14 07:16:14 2004
+diff -rc v47/include/graphics/gels.h gg/os-include/graphics/gels.h
+*** v47/include/graphics/gels.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/gels.h	Thu Feb  3 02:26:24 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif
   
@@ -1785,10 +1986,10 @@ diff -rc v45/include/graphics/gels.h gg/os-include/graphics/gels.h
   /* user-set VSprite flags: */
   #define SUSERFLAGS  0x00FF    /* mask of all user-settable VSprite-flags */
 ***************
-*** 277,281 ****
---- 281,289 ----
+*** 276,280 ****
+--- 280,288 ----
        */
-      LONG (*collPtrs[16]) __CLIB_PROTOTYPE((struct VSprite *,struct VSprite *));
+      LONG (* __STDARGS__ collPtrs[16]) __CLIB_PROTOTYPE((struct VSprite *,struct VSprite *));
   };
 + 
 + #ifdef __PPC__
@@ -1796,37 +1997,37 @@ diff -rc v45/include/graphics/gels.h gg/os-include/graphics/gels.h
 + #endif
   
   #endif	/* GRAPHICS_GELS_H */
-diff -rc v45/include/graphics/gfx.h gg/os-include/graphics/gfx.h
-*** v45/include/graphics/gfx.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/gfx.h	Sat Aug 14 07:16:34 2004
+diff -rc v47/include/graphics/gfx.h gg/os-include/graphics/gfx.h
+*** v47/include/graphics/gfx.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/gfx.h	Thu Feb  3 02:26:52 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
-  #include <exec/types.h>
+*** 17,22 ****
+--- 17,26 ----
+  #include <utility/tagitem.h>
   #endif
   
 + #ifdef __PPC__
 + #pragma pack(2)
 + #endif
 + 
-  #define BITSET	0x8000
-  #define BITCLR	0
   
+  #define BITSET  0x8000
+  #define BITCLR  0
 ***************
-*** 77,81 ****
---- 81,89 ----
-  #define BMA_DEPTH 4
-  #define BMA_WIDTH 8
-  #define BMA_FLAGS 12
+*** 231,235 ****
+--- 235,243 ----
+           * allocate a non-native bitmap.
+           * This is intentionally identical to SA_ErrorCode.
+           */
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif	/* GRAPHICS_GFX_H */
-diff -rc v45/include/graphics/gfxbase.h gg/os-include/graphics/gfxbase.h
-*** v45/include/graphics/gfxbase.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/gfxbase.h	Sat Aug 14 07:16:55 2004
+diff -rc v47/include/graphics/gfxbase.h gg/os-include/graphics/gfxbase.h
+*** v47/include/graphics/gfxbase.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/gfxbase.h	Thu Feb  3 02:27:30 2022
 ***************
 *** 23,28 ****
 --- 23,32 ----
@@ -1841,8 +2042,8 @@ diff -rc v45/include/graphics/gfxbase.h gg/os-include/graphics/gfxbase.h
   {
   	struct	Library  LibNode;
 ***************
-*** 187,191 ****
---- 191,199 ----
+*** 189,193 ****
+--- 193,201 ----
   #define NEW_DATABASE	1
   
   #define GRAPHICSNAME	"graphics.library"
@@ -1852,12 +2053,39 @@ diff -rc v45/include/graphics/gfxbase.h gg/os-include/graphics/gfxbase.h
 + #endif
   
   #endif	/* GRAPHICS_GFXBASE_H */
-diff -rc v45/include/graphics/gfxnodes.h gg/os-include/graphics/gfxnodes.h
-*** v45/include/graphics/gfxnodes.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/gfxnodes.h	Sat Aug 14 07:17:45 2004
+diff -rc v47/include/graphics/gfxmacros.h gg/os-include/graphics/gfxmacros.h
+*** v47/include/graphics/gfxmacros.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/gfxmacros.h	Fri Feb  4 01:50:29 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 54,62 ****
+  #define SafeSetOutlinePen(w,c)	  {if (GfxBase->LibNode.lib_Version<39) { (w)->AOlPen = c;(w)->Flags |= AREAOUTLINE;} else SetOutlinePen(w,c); }
+  #define SafeSetWriteMask(w,m)	{if (GfxBase->LibNode.lib_Version<39) { (w)->Mask = (m);} else SetWriteMask(w,m); }
+  
+- /* synonym for GetOPen for consistency with SetOutlinePen */
+- #define GetOutlinePen(rp) GetOPen(rp)
+- 
+  #define BNDRYOFF(w)	{(w)->Flags &= ~AREAOUTLINE;}
+  
+  #define CINIT(c,n)	  UCopperListInit(c,n);
+--- 54,59 ----
+***************
+*** 114,122 ****
+  					else \
+  						SetWriteMask(w,m); \
+  				} while (0)
+- 
+- /* synonym for GetOPen for consistency with SetOutlinePen */
+- #define GetOutlinePen(rp) GetOPen(rp)
+  
+  
+  #define BNDRYOFF(w)	do { \
+--- 111,116 ----
+diff -rc v47/include/graphics/gfxnodes.h gg/os-include/graphics/gfxnodes.h
+*** v47/include/graphics/gfxnodes.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/gfxnodes.h	Thu Feb  3 02:29:14 2022
+***************
+*** 17,22 ****
+--- 17,26 ----
   #include <exec/nodes.h>
   #endif
   
@@ -1865,12 +2093,12 @@ diff -rc v45/include/graphics/gfxnodes.h gg/os-include/graphics/gfxnodes.h
 + #pragma pack(2)
 + #endif
 + 
-  struct	ExtendedNode	{
-  	struct	Node	*xln_Succ;
-  	struct	Node	*xln_Pred;
+  
+  struct  ExtendedNode    {
+    struct  Node   *xln_Succ;
 ***************
-*** 32,36 ****
---- 36,44 ----
+*** 40,44 ****
+--- 44,52 ----
   #define	VIEWPORT_EXTRA_TYPE	2
   #define	SPECIAL_MONITOR_TYPE	3
   #define	MONITOR_SPEC_TYPE	4
@@ -1880,12 +2108,12 @@ diff -rc v45/include/graphics/gfxnodes.h gg/os-include/graphics/gfxnodes.h
 + #endif
   
   #endif	/* GRAPHICS_GFXNODES_H */
-diff -rc v45/include/graphics/graphint.h gg/os-include/graphics/graphint.h
-*** v45/include/graphics/graphint.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/graphint.h	Sat Aug 14 07:17:59 2004
+diff -rc v47/include/graphics/graphint.h gg/os-include/graphics/graphint.h
+*** v47/include/graphics/graphint.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/graphint.h	Thu Feb  3 02:29:30 2022
 ***************
-*** 12,17 ****
---- 12,21 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <exec/nodes.h>
   #endif
   
@@ -1897,9 +2125,9 @@ diff -rc v45/include/graphics/graphint.h gg/os-include/graphics/graphint.h
   struct Isrvstr
   {
 ***************
-*** 21,25 ****
---- 25,33 ----
-      LONG (*ccode) __CLIB_PROTOTYPE((APTR));
+*** 28,32 ****
+--- 32,40 ----
+      LONG __STDARGS__ (*ccode) __CLIB_PROTOTYPE((APTR));
       APTR Carg;
   };
 + 
@@ -1908,53 +2136,53 @@ diff -rc v45/include/graphics/graphint.h gg/os-include/graphics/graphint.h
 + #endif
   
   #endif	/* GRAPHICS_GRAPHINT_H */
-diff -rc v45/include/graphics/layers.h gg/os-include/graphics/layers.h
-*** v45/include/graphics/layers.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/layers.h	Sat Aug 14 07:18:15 2004
+diff -rc v47/include/graphics/layers.h gg/os-include/graphics/layers.h
+*** v47/include/graphics/layers.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/layers.h	Thu Feb  3 02:29:51 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
-  #include <exec/semaphores.h>
+*** 21,26 ****
+--- 21,30 ----
+  #include <graphics/gfx.h>
   #endif
   
 + #ifdef __PPC__
 + #pragma pack(2)
 + #endif
 + 
-  #define LAYERSIMPLE		1
-  #define LAYERSMART		2
-  #define LAYERSUPER		4
+  /*
+   * layer status flags. These really belong to
+   * graphics/clip.h but are here for traditional reason
 ***************
-*** 56,60 ****
---- 60,68 ----
-   */
-  #define	LAYERS_NOBACKFILL	((struct Hook *)1)
-  #define	LAYERS_BACKFILL		((struct Hook *)0)
+*** 102,106 ****
+--- 106,114 ----
+  #define LAYER_BACKMOST          ((struct Layer *)0)
+  #define LAYER_FRONTMOST         ((struct Layer *)1)
+  
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
-  #endif	/* GRAPHICS_LAYERS_H */
-diff -rc v45/include/graphics/monitor.h gg/os-include/graphics/monitor.h
-*** v45/include/graphics/monitor.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/monitor.h	Sat Aug 14 07:18:51 2004
+  #endif  /* GRAPHICS_LAYERS_H */
+diff -rc v47/include/graphics/monitor.h gg/os-include/graphics/monitor.h
+*** v47/include/graphics/monitor.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/monitor.h	Thu Feb  3 02:30:42 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
-  #include	<graphics/gfx.h>
+*** 29,34 ****
+--- 29,38 ----
+  #include <graphics/view.h>
   #endif
   
 + #ifdef __PPC__
 + #pragma pack(2)
 + #endif
 + 
-  struct	MonitorSpec
-  {
-      struct	ExtendedNode	ms_Node;
+  /*
+  ** The functions in the MonitorSpec shall only be used internally, the
+  ** calling convention is with registers populated below.
 ***************
-*** 168,172 ****
---- 172,180 ----
+*** 193,198 ****
+--- 197,206 ----
       struct	AnalogSignalInterval	hsync;
       struct	AnalogSignalInterval	vsync;
   };
@@ -1964,12 +2192,13 @@ diff -rc v45/include/graphics/monitor.h gg/os-include/graphics/monitor.h
 + #endif
   
   #endif	/* GRAPHICS_MONITOR_H */
-diff -rc v45/include/graphics/rastport.h gg/os-include/graphics/rastport.h
-*** v45/include/graphics/rastport.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/rastport.h	Sat Aug 14 07:19:10 2004
+  
+diff -rc v47/include/graphics/rastport.h gg/os-include/graphics/rastport.h
+*** v47/include/graphics/rastport.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/rastport.h	Thu Feb  3 02:31:06 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <graphics/gfx.h>
   #endif
   
@@ -1981,8 +2210,8 @@ diff -rc v45/include/graphics/rastport.h gg/os-include/graphics/rastport.h
   {
       WORD   *VctrTbl;	     /* ptr to start of vector table */
 ***************
-*** 107,111 ****
---- 111,119 ----
+*** 108,112 ****
+--- 112,120 ----
   /* this preserves the continuity of jaggies regardless of clip window */
   /* When drawing into a RastPort, if the ptr to ClipRect is nil then there */
   /* is no clipping done, this is dangerous but useful for speed */
@@ -1992,12 +2221,12 @@ diff -rc v45/include/graphics/rastport.h gg/os-include/graphics/rastport.h
 + #endif
   
   #endif	/* GRAPHICS_RASTPORT_H */
-diff -rc v45/include/graphics/regions.h gg/os-include/graphics/regions.h
-*** v45/include/graphics/regions.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/regions.h	Sat Aug 14 07:19:25 2004
+diff -rc v47/include/graphics/regions.h gg/os-include/graphics/regions.h
+*** v47/include/graphics/regions.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/regions.h	Thu Feb  3 02:31:24 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <graphics/gfx.h>
   #endif
   
@@ -2009,8 +2238,8 @@ diff -rc v45/include/graphics/regions.h gg/os-include/graphics/regions.h
   {
       struct RegionRectangle *Next,*Prev;
 ***************
-*** 27,31 ****
---- 31,39 ----
+*** 28,32 ****
+--- 32,40 ----
       struct Rectangle bounds;
       struct RegionRectangle *RegionRectangle;
   };
@@ -2020,12 +2249,12 @@ diff -rc v45/include/graphics/regions.h gg/os-include/graphics/regions.h
 + #endif
   
   #endif	/* GRAPHICS_REGIONS_H */
-diff -rc v45/include/graphics/scale.h gg/os-include/graphics/scale.h
-*** v45/include/graphics/scale.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/scale.h	Sat Aug 14 07:19:46 2004
+diff -rc v47/include/graphics/scale.h gg/os-include/graphics/scale.h
+*** v47/include/graphics/scale.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/scale.h	Thu Feb  3 02:32:17 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif
   
@@ -2037,22 +2266,22 @@ diff -rc v45/include/graphics/scale.h gg/os-include/graphics/scale.h
       UWORD   bsa_SrcX, bsa_SrcY;			/* source origin */
       UWORD   bsa_SrcWidth, bsa_SrcHeight;	/* source size */
 ***************
-*** 28,31 ****
---- 32,39 ----
+*** 27,30 ****
+--- 31,38 ----
       LONG    bsa_Reserved1;
       LONG    bsa_Reserved2;
   };
++ 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
-+ 
   #endif	/* GRAPHICS_SCALE_H */
-diff -rc v45/include/graphics/sprite.h gg/os-include/graphics/sprite.h
-*** v45/include/graphics/sprite.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/sprite.h	Sat Aug 14 07:20:02 2004
+diff -rc v47/include/graphics/sprite.h gg/os-include/graphics/sprite.h
+*** v47/include/graphics/sprite.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/sprite.h	Thu Feb  3 02:32:51 2022
 ***************
-*** 12,17 ****
---- 12,21 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif
   
@@ -2064,8 +2293,8 @@ diff -rc v45/include/graphics/sprite.h gg/os-include/graphics/sprite.h
   
   struct SimpleSprite
 ***************
-*** 46,50 ****
---- 50,58 ----
+*** 47,51 ****
+--- 51,59 ----
   
   /* tags valid for either GetExtSprite or ChangeExtSprite */
   #define GSTAG_SCANDOUBLED	0x83000000	/* request "NTSC-Like" height if possible. */
@@ -2075,12 +2304,12 @@ diff -rc v45/include/graphics/sprite.h gg/os-include/graphics/sprite.h
 + #endif
   
   #endif	/* GRAPHICS_SPRITE_H */
-diff -rc v45/include/graphics/text.h gg/os-include/graphics/text.h
-*** v45/include/graphics/text.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/text.h	Sat Aug 14 07:20:26 2004
+diff -rc v47/include/graphics/text.h gg/os-include/graphics/text.h
+*** v47/include/graphics/text.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/text.h	Thu Feb  3 02:33:32 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include	<utility/tagitem.h>
   #endif	/* UTILITY_TAGITEM_H */
   
@@ -2092,8 +2321,8 @@ diff -rc v45/include/graphics/text.h gg/os-include/graphics/text.h
   #define	FS_NORMAL	0	/* normal text (no style bits set) */
   #define	FSB_UNDERLINED	0	/* underlined (under baseline) */
 ***************
-*** 166,170 ****
---- 170,178 ----
+*** 165,169 ****
+--- 169,177 ----
       UWORD   te_Height;		/* same as tf_YSize */
       struct Rectangle te_Extent;	/* relative to CP */
   };
@@ -2103,12 +2332,12 @@ diff -rc v45/include/graphics/text.h gg/os-include/graphics/text.h
 + #endif
   
   #endif	/* GRAPHICS_TEXT_H */
-diff -rc v45/include/graphics/view.h gg/os-include/graphics/view.h
-*** v45/include/graphics/view.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/graphics/view.h	Sat Aug 14 07:21:00 2004
+diff -rc v47/include/graphics/view.h gg/os-include/graphics/view.h
+*** v47/include/graphics/view.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/graphics/view.h	Thu Feb  3 02:34:55 2022
 ***************
-*** 44,49 ****
---- 44,53 ----
+*** 46,51 ****
+--- 46,55 ----
   #include <hardware/custom.h>
   #endif
   
@@ -2120,8 +2349,8 @@ diff -rc v45/include/graphics/view.h gg/os-include/graphics/view.h
   {
   	struct	ViewPort *Next;
 ***************
-*** 294,298 ****
---- 298,306 ----
+*** 296,300 ****
+--- 300,308 ----
   	UWORD	dbi_BeamPos1;
   	UWORD	dbi_BeamPos2;
   };
@@ -2131,13 +2360,13 @@ diff -rc v45/include/graphics/view.h gg/os-include/graphics/view.h
 + #endif
   
   #endif	/* GRAPHICS_VIEW_H */
-diff -rc v45/include/hardware/blit.h gg/os-include/hardware/blit.h
-*** v45/include/hardware/blit.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/hardware/blit.h	Sat Aug 14 07:23:13 2004
+diff -rc v47/include/hardware/blit.h gg/os-include/hardware/blit.h
+*** v47/include/hardware/blit.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/hardware/blit.h	Thu Feb  3 02:35:38 2022
 ***************
-*** 10,15 ****
---- 10,19 ----
-  **	    All Rights Reserved
+*** 9,14 ****
+--- 9,18 ----
+  **	    Developed under license.
   */
   
 + #ifdef __PPC__
@@ -2148,8 +2377,8 @@ diff -rc v45/include/hardware/blit.h gg/os-include/hardware/blit.h
   #define VSIZEBITS 16-HSIZEBITS
   #define HSIZEMASK 0x3f	      /* 2^6 -- 1 */
 ***************
-*** 98,102 ****
---- 102,110 ----
+*** 97,101 ****
+--- 101,109 ----
   /* defined bits for bltstat */
   #define CLEANUP 0x40
   #define CLEANME CLEANUP
@@ -2159,37 +2388,9 @@ diff -rc v45/include/hardware/blit.h gg/os-include/hardware/blit.h
 + #endif
   
   #endif	/* HARDWARE_BLIT_H */
-diff -rc v45/include/hardware/cia.h gg/os-include/hardware/cia.h
-*** v45/include/hardware/cia.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/hardware/cia.h	Sat Aug 14 07:23:52 2004
-***************
-*** 15,20 ****
---- 15,24 ----
-  #include <exec/types.h>
-  #endif /* EXEC_TYPES_H */
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  
-  /*
-***************
-*** 192,196 ****
---- 196,204 ----
-  #define CIAF_DSKSIDE	(1L<<2)
-  #define CIAF_DSKDIREC	(1L<<1)
-  #define CIAF_DSKSTEP	(1L<<0)
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif	/* HARDWARE_CIA_H */
-diff -rc v45/include/hardware/custom.h gg/os-include/hardware/custom.h
-*** v45/include/hardware/custom.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/hardware/custom.h	Sat Aug 14 07:24:11 2004
+diff -rc v47/include/hardware/cia.h gg/os-include/hardware/cia.h
+*** v47/include/hardware/cia.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/hardware/cia.h	Thu Feb  3 02:36:03 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -2204,8 +2405,36 @@ diff -rc v45/include/hardware/custom.h gg/os-include/hardware/custom.h
   
   /*
 ***************
-*** 176,180 ****
---- 180,188 ----
+*** 191,195 ****
+--- 195,203 ----
+  #define CIAF_DSKSIDE	(1L<<2)
+  #define CIAF_DSKDIREC	(1L<<1)
+  #define CIAF_DSKSTEP	(1L<<0)
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif	/* HARDWARE_CIA_H */
+diff -rc v47/include/hardware/custom.h gg/os-include/hardware/custom.h
+*** v47/include/hardware/custom.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/hardware/custom.h	Thu Feb  3 02:36:22 2022
+***************
+*** 13,18 ****
+--- 13,22 ----
+  #include <exec/types.h>
+  #endif /* EXEC_TYPES_H */
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  
+  /*
+***************
+*** 175,179 ****
+--- 179,187 ----
   #define BPLCON3_BRDNBLNK	(1<<5)	/* border is opaque */
   
   #endif	/* ECS_SPECIFIC */
@@ -2215,9 +2444,9 @@ diff -rc v45/include/hardware/custom.h gg/os-include/hardware/custom.h
 + #endif
   
   #endif	/* HARDWARE_CUSTOM_H */
-diff -rc v45/include/images/drawlist.h gg/os-include/images/drawlist.h
-*** v45/include/images/drawlist.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/images/drawlist.h	Sat Aug 14 07:26:05 2004
+diff -rc v47/include/images/drawlist.h gg/os-include/images/drawlist.h
+*** v47/include/images/drawlist.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/images/drawlist.h	Thu Feb  3 02:37:33 2022
 ***************
 *** 20,25 ****
 --- 20,29 ----
@@ -2243,12 +2472,12 @@ diff -rc v45/include/images/drawlist.h gg/os-include/images/drawlist.h
 + #endif
   
   #endif /* IMAGES_DRAWLIST_H */
-diff -rc v45/include/intuition/cghooks.h gg/os-include/intuition/cghooks.h
-*** v45/include/intuition/cghooks.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/cghooks.h	Sat Aug 14 07:27:24 2004
+diff -rc v47/include/intuition/cghooks.h gg/os-include/intuition/cghooks.h
+*** v47/include/intuition/cghooks.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/cghooks.h	Thu Feb  3 02:38:35 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
+*** 17,22 ****
+--- 17,26 ----
   #include <intuition/intuition.h>
   #endif
   
@@ -2260,8 +2489,8 @@ diff -rc v45/include/intuition/cghooks.h gg/os-include/intuition/cghooks.h
    * Package of information passed to custom and 'boopsi'
    * gadget "hook" functions.  This structure is READ ONLY.
 ***************
-*** 75,79 ****
---- 79,87 ----
+*** 74,78 ****
+--- 78,86 ----
    * pointer to the unused MutualExclude field of a custom gadget
    */
   #define CUSTOM_HOOK( gadget ) ( (struct Hook *) (gadget)->MutualExclude)
@@ -2271,12 +2500,12 @@ diff -rc v45/include/intuition/cghooks.h gg/os-include/intuition/cghooks.h
 + #endif
   
   #endif
-diff -rc v45/include/intuition/classes.h gg/os-include/intuition/classes.h
-*** v45/include/intuition/classes.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/classes.h	Sat Aug 14 07:28:01 2004
+diff -rc v47/include/intuition/classes.h gg/os-include/intuition/classes.h
+*** v47/include/intuition/classes.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/classes.h	Thu Feb  3 02:38:56 2022
 ***************
-*** 28,33 ****
---- 28,37 ----
+*** 27,32 ****
+--- 27,36 ----
   #include <intuition/classusr.h>
   #endif
   
@@ -2288,8 +2517,8 @@ diff -rc v45/include/intuition/classes.h gg/os-include/intuition/classes.h
   /***************** "White Box" access to struct IClass ***********************/
   /*****************************************************************************/
 ***************
-*** 111,115 ****
---- 115,123 ----
+*** 110,114 ****
+--- 114,122 ----
   };
   
   /*****************************************************************************/
@@ -2299,9 +2528,9 @@ diff -rc v45/include/intuition/classes.h gg/os-include/intuition/classes.h
 + #endif
   
   #endif
-diff -rc v45/include/intuition/classusr.h gg/os-include/intuition/classusr.h
-*** v45/include/intuition/classusr.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/classusr.h	Sat Aug 14 07:28:25 2004
+diff -rc v47/include/intuition/classusr.h gg/os-include/intuition/classusr.h
+*** v47/include/intuition/classusr.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/classusr.h	Thu Feb  3 02:39:48 2022
 ***************
 *** 15,20 ****
 --- 15,24 ----
@@ -2327,12 +2556,12 @@ diff -rc v45/include/intuition/classusr.h gg/os-include/intuition/classusr.h
 + #endif
   
   #endif
-diff -rc v45/include/intuition/gadgetclass.h gg/os-include/intuition/gadgetclass.h
-*** v45/include/intuition/gadgetclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/gadgetclass.h	Sat Aug 14 07:31:48 2004
+diff -rc v47/include/intuition/gadgetclass.h gg/os-include/intuition/gadgetclass.h
+*** v47/include/intuition/gadgetclass.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/gadgetclass.h	Thu Feb  3 02:41:25 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -2344,8 +2573,8 @@ diff -rc v45/include/intuition/gadgetclass.h gg/os-include/intuition/gadgetclass
   
   /* NOTE:  <intuition/iobsolete.h> is included at the END of this file! */
 ***************
-*** 541,546 ****
---- 545,554 ----
+*** 576,581 ****
+--- 580,589 ----
       struct GadgetInfo *gpki_GInfo;
       ULONG gpki_Abort;			/* TRUE if input was aborted */
   };
@@ -2356,12 +2585,12 @@ diff -rc v45/include/intuition/gadgetclass.h gg/os-include/intuition/gadgetclass
   
   /*****************************************************************************/
   
-diff -rc v45/include/intuition/imageclass.h gg/os-include/intuition/imageclass.h
-*** v45/include/intuition/imageclass.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/imageclass.h	Sat Aug 14 07:32:35 2004
+diff -rc v47/include/intuition/imageclass.h gg/os-include/intuition/imageclass.h
+*** v47/include/intuition/imageclass.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/imageclass.h	Thu Feb  3 02:42:36 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <intuition/intuition.h>
   #endif
   
@@ -2373,8 +2602,8 @@ diff -rc v45/include/intuition/imageclass.h gg/os-include/intuition/imageclass.h
    * NOTE:  <intuition/iobsolete.h> is included at the END of this file!
    */
 ***************
-*** 301,306 ****
---- 305,314 ----
+*** 354,359 ****
+--- 358,367 ----
   #define IDOMAIN_MINIMUM		(0)
   #define IDOMAIN_NOMINAL		(1)
   #define IDOMAIN_MAXIMUM		(2)
@@ -2385,12 +2614,12 @@ diff -rc v45/include/intuition/imageclass.h gg/os-include/intuition/imageclass.h
   
   /* Include obsolete identifiers: */
   #ifndef INTUITION_IOBSOLETE_H
-diff -rc v45/include/intuition/intuition.h gg/os-include/intuition/intuition.h
-*** v45/include/intuition/intuition.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/intuition.h	Sat Aug 14 07:34:45 2004
+diff -rc v47/include/intuition/intuition.h gg/os-include/intuition/intuition.h
+*** v47/include/intuition/intuition.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/intuition.h	Thu Feb  3 02:45:20 2022
 ***************
-*** 50,55 ****
---- 50,59 ----
+*** 49,54 ****
+--- 49,58 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -2402,9 +2631,9 @@ diff -rc v45/include/intuition/intuition.h gg/os-include/intuition/intuition.h
    * NOTE:  intuition/iobsolete.h is included at the END of this file!
    */
 ***************
-*** 1412,1417 ****
---- 1416,1425 ----
-  #define HC_GADGETHELP	(1)
+*** 1491,1496 ****
+--- 1495,1504 ----
+  #define WINDOW_FRONTMOST ((struct Window *)1)
   
   
 + #ifdef __PPC__
@@ -2415,8 +2644,8 @@ diff -rc v45/include/intuition/intuition.h gg/os-include/intuition/intuition.h
   #include <intuition/screens.h>
   #endif
 ***************
-*** 1420,1425 ****
---- 1428,1437 ----
+*** 1499,1504 ****
+--- 1507,1516 ----
   #include <intuition/preferences.h>
   #endif
   
@@ -2428,8 +2657,8 @@ diff -rc v45/include/intuition/intuition.h gg/os-include/intuition/intuition.h
   /* === Remember =========================================================== */
   /* ======================================================================== */
 ***************
-*** 1706,1711 ****
---- 1718,1727 ----
+*** 1785,1790 ****
+--- 1797,1806 ----
        */
       LONG thd_ScreenChanged;
   };
@@ -2440,12 +2669,12 @@ diff -rc v45/include/intuition/intuition.h gg/os-include/intuition/intuition.h
   
   /* Include obsolete identifiers: */
   #ifndef INTUITION_IOBSOLETE_H
-diff -rc v45/include/intuition/intuitionbase.h gg/os-include/intuition/intuitionbase.h
-*** v45/include/intuition/intuitionbase.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/intuitionbase.h	Sat Aug 14 07:37:47 2004
+diff -rc v47/include/intuition/intuitionbase.h gg/os-include/intuition/intuitionbase.h
+*** v47/include/intuition/intuitionbase.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/intuitionbase.h	Thu Feb  3 02:47:02 2022
 ***************
-*** 27,32 ****
---- 27,36 ----
+*** 26,31 ****
+--- 26,35 ----
   #include <exec/interrupts.h>
   #endif
   
@@ -2457,8 +2686,8 @@ diff -rc v45/include/intuition/intuitionbase.h gg/os-include/intuition/intuition
    *  settings in the config arrays
    */
 ***************
-*** 89,94 ****
---- 93,102 ----
+*** 88,93 ****
+--- 92,101 ----
        * will continue to change.
        */
   };
@@ -2469,9 +2698,9 @@ diff -rc v45/include/intuition/intuitionbase.h gg/os-include/intuition/intuition
   
   #endif
   
-diff -rc v45/include/intuition/preferences.h gg/os-include/intuition/preferences.h
-*** v45/include/intuition/preferences.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/preferences.h	Sat Aug 14 07:39:00 2004
+diff -rc v47/include/intuition/preferences.h gg/os-include/intuition/preferences.h
+*** v47/include/intuition/preferences.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/preferences.h	Thu Feb  3 02:48:26 2022
 ***************
 *** 18,23 ****
 --- 18,27 ----
@@ -2497,12 +2726,12 @@ diff -rc v45/include/intuition/preferences.h gg/os-include/intuition/preferences
 + #endif
   
   #endif
-diff -rc v45/include/intuition/screens.h gg/os-include/intuition/screens.h
-*** v45/include/intuition/screens.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/screens.h	Sat Aug 14 07:39:32 2004
+diff -rc v47/include/intuition/screens.h gg/os-include/intuition/screens.h
+*** v47/include/intuition/screens.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/screens.h	Thu Feb  3 02:49:06 2022
 ***************
-*** 38,43 ****
---- 38,47 ----
+*** 37,42 ****
+--- 37,46 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -2514,8 +2743,8 @@ diff -rc v45/include/intuition/screens.h gg/os-include/intuition/screens.h
    * NOTE:  intuition/iobsolete.h is included at the END of this file!
    */
 ***************
-*** 652,657 ****
---- 656,665 ----
+*** 667,672 ****
+--- 671,680 ----
    */
   #define SB_SCREEN_BITMAP	1
   #define SB_COPY_BITMAP		2
@@ -2526,12 +2755,12 @@ diff -rc v45/include/intuition/screens.h gg/os-include/intuition/screens.h
   
   /* Include obsolete identifiers: */
   #ifndef INTUITION_IOBSOLETE_H
-diff -rc v45/include/intuition/sghooks.h gg/os-include/intuition/sghooks.h
-*** v45/include/intuition/sghooks.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/intuition/sghooks.h	Sat Aug 14 07:39:50 2004
+diff -rc v47/include/intuition/sghooks.h gg/os-include/intuition/sghooks.h
+*** v47/include/intuition/sghooks.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/intuition/sghooks.h	Thu Feb  3 02:49:31 2022
 ***************
-*** 14,19 ****
---- 14,23 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <exec/types.h>
   #endif
   
@@ -2543,8 +2772,8 @@ diff -rc v45/include/intuition/sghooks.h gg/os-include/intuition/sghooks.h
       /* display specifications	*/
       struct TextFont *Font;	/* must be an open Font (not TextAttr)	*/
 ***************
-*** 185,189 ****
---- 189,197 ----
+*** 184,188 ****
+--- 188,196 ----
    *	You should always leave the SGA_REDISPLAY flag set, since Intuition
    *	uses this processing when activating a string gadget.
    */
@@ -2554,12 +2783,12 @@ diff -rc v45/include/intuition/sghooks.h gg/os-include/intuition/sghooks.h
 + #endif
   
   #endif
-diff -rc v45/include/libraries/amigaguide.h gg/os-include/libraries/amigaguide.h
-*** v45/include/libraries/amigaguide.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/amigaguide.h	Sat Aug 14 07:40:27 2004
+diff -rc v47/include/libraries/amigaguide.h gg/os-include/libraries/amigaguide.h
+*** v47/include/libraries/amigaguide.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/amigaguide.h	Thu Feb  3 02:50:16 2022
 ***************
-*** 45,50 ****
---- 45,54 ----
+*** 44,49 ****
+--- 44,53 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -2571,8 +2800,8 @@ diff -rc v45/include/libraries/amigaguide.h gg/os-include/libraries/amigaguide.h
   #define	APSH_TOOL_ID 11000L
   #define	StartupMsgID		(APSH_TOOL_ID+1L)	/* Startup message */
 ***************
-*** 235,239 ****
---- 239,247 ----
+*** 234,238 ****
+--- 238,246 ----
       ULONG MethodID;
       struct TagItem *oen_Attrs;		/*  R: Additional attributes */
   };
@@ -2582,40 +2811,12 @@ diff -rc v45/include/libraries/amigaguide.h gg/os-include/libraries/amigaguide.h
 + #endif
   
   #endif /* LIBRARIES_AMIGAGUIDE_H */
-diff -rc v45/include/libraries/aml.h gg/os-include/libraries/aml.h
-*** v45/include/libraries/aml.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/aml.h	Sat Aug 14 07:41:23 2004
+diff -rc v47/include/libraries/asl.h gg/os-include/libraries/asl.h
+*** v47/include/libraries/asl.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/asl.h	Thu Feb  3 02:50:56 2022
 ***************
-*** 25,30 ****
---- 25,34 ----
-  #include <utility/tagitem.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  /*****************************************************************************/
-  
-  #define	AmlName "aml.library"
-***************
-*** 326,330 ****
---- 330,338 ----
-  #define ENCODE_ROT	(7)
-  
-  /*****************************************************************************/
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* LIBRARIES_AML_H */
-diff -rc v45/include/libraries/asl.h gg/os-include/libraries/asl.h
-*** v45/include/libraries/asl.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/asl.h	Sat Aug 14 07:42:01 2004
-***************
-*** 42,47 ****
---- 42,51 ----
+*** 40,45 ****
+--- 40,49 ----
   #include <graphics/displayinfo.h>
   #endif
   
@@ -2627,8 +2828,8 @@ diff -rc v45/include/libraries/asl.h gg/os-include/libraries/asl.h
   /*****************************************************************************/
   
 ***************
-*** 544,548 ****
---- 548,556 ----
+*** 554,558 ****
+--- 558,566 ----
   
   /*****************************************************************************/
   
@@ -2638,12 +2839,12 @@ diff -rc v45/include/libraries/asl.h gg/os-include/libraries/asl.h
 + #endif
   
   #endif /* LIBRARIES_ASL_H */
-diff -rc v45/include/libraries/commodities.h gg/os-include/libraries/commodities.h
-*** v45/include/libraries/commodities.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/commodities.h	Sat Aug 14 07:42:30 2004
+diff -rc v47/include/libraries/commodities.h gg/os-include/libraries/commodities.h
+*** v47/include/libraries/commodities.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/commodities.h	Thu Feb  3 02:51:33 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <exec/ports.h>
   #endif
   
@@ -2655,8 +2856,8 @@ diff -rc v45/include/libraries/commodities.h gg/os-include/libraries/commodities
   /*****************************************************************************/
   
 ***************
-*** 197,201 ****
---- 201,209 ----
+*** 196,200 ****
+--- 200,208 ----
   
   /*****************************************************************************/
   
@@ -2666,9 +2867,9 @@ diff -rc v45/include/libraries/commodities.h gg/os-include/libraries/commodities
 + #endif
   
   #endif /* LIBRARIES_COMMODITIES_H */
-diff -rc v45/include/libraries/configregs.h gg/os-include/libraries/configregs.h
-*** v45/include/libraries/configregs.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/configregs.h	Sat Aug 14 07:42:56 2004
+diff -rc v47/include/libraries/configregs.h gg/os-include/libraries/configregs.h
+*** v47/include/libraries/configregs.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/configregs.h	Thu Feb  3 02:52:03 2022
 ***************
 *** 15,20 ****
 --- 15,24 ----
@@ -2694,9 +2895,9 @@ diff -rc v45/include/libraries/configregs.h gg/os-include/libraries/configregs.h
 + #endif
   
   #endif /* LIBRARIES_CONFIGREGS_H */
-diff -rc v45/include/libraries/configvars.h gg/os-include/libraries/configvars.h
-*** v45/include/libraries/configvars.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/configvars.h	Sat Aug 14 07:43:26 2004
+diff -rc v47/include/libraries/configvars.h gg/os-include/libraries/configvars.h
+*** v47/include/libraries/configvars.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/configvars.h	Thu Feb  3 02:52:27 2022
 ***************
 *** 22,27 ****
 --- 22,31 ----
@@ -2722,12 +2923,12 @@ diff -rc v45/include/libraries/configvars.h gg/os-include/libraries/configvars.h
 + #endif
   
   #endif /* LIBRARIES_CONFIGVARS_H */
-diff -rc v45/include/libraries/expansionbase.h gg/os-include/libraries/expansionbase.h
-*** v45/include/libraries/expansionbase.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/expansionbase.h	Sat Aug 14 07:44:21 2004
+diff -rc v47/include/libraries/expansionbase.h gg/os-include/libraries/expansionbase.h
+*** v47/include/libraries/expansionbase.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/expansionbase.h	Thu Feb  3 02:53:23 2022
 ***************
-*** 26,31 ****
---- 26,35 ----
+*** 25,30 ****
+--- 25,34 ----
   #include <libraries/configvars.h>
   #endif	/* LIBRARIES_CONFIGVARS_H */
   
@@ -2739,8 +2940,8 @@ diff -rc v45/include/libraries/expansionbase.h gg/os-include/libraries/expansion
   /* BootNodes are scanned by dos.library at startup.  Items found on the
      list are started by dos. BootNodes are added with the AddDosNode() or
 ***************
-*** 85,89 ****
---- 89,97 ----
+*** 84,88 ****
+--- 88,96 ----
   #define	EBB_START_CC0	7
   #define	EBF_START_CC0	(1<<7)
   
@@ -2750,12 +2951,12 @@ diff -rc v45/include/libraries/expansionbase.h gg/os-include/libraries/expansion
 + #endif
   
   #endif	/* LIBRARIES_EXPANSIONBASE_H */
-diff -rc v45/include/libraries/gadtools.h gg/os-include/libraries/gadtools.h
-*** v45/include/libraries/gadtools.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/gadtools.h	Sat Aug 14 07:44:55 2004
+diff -rc v47/include/libraries/gadtools.h gg/os-include/libraries/gadtools.h
+*** v47/include/libraries/gadtools.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/gadtools.h	Thu Feb  3 02:57:47 2022
 ***************
-*** 28,33 ****
---- 28,37 ----
+*** 27,32 ****
+--- 27,36 ----
   #include <intuition/gadgetclass.h>
   #endif
   
@@ -2767,8 +2968,8 @@ diff -rc v45/include/libraries/gadtools.h gg/os-include/libraries/gadtools.h
   
   /* The kinds (almost classes) of gadgets that GadTools supports.
 ***************
-*** 452,456 ****
---- 456,464 ----
+*** 521,525 ****
+--- 525,533 ----
   };
   
   /*------------------------------------------------------------------------*/
@@ -2778,86 +2979,13 @@ diff -rc v45/include/libraries/gadtools.h gg/os-include/libraries/gadtools.h
 + #endif
   
   #endif /* LIBRARIES_GADTOOLS_H */
-diff -rc v45/include/libraries/hdwrench.h gg/os-include/libraries/hdwrench.h
-*** v45/include/libraries/hdwrench.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/hdwrench.h	Sat Aug 14 07:46:49 2004
+diff -rc v47/include/libraries/iffparse.h gg/os-include/libraries/iffparse.h
+*** v47/include/libraries/iffparse.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/iffparse.h	Thu Feb  3 02:58:32 2022
 ***************
-*** 11,16 ****
---- 11,20 ----
-   */
-  #ifndef HDWRENCH_H
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  struct HDWLibrary
-  {
-          struct				 Library ml_Lib;
-***************
-*** 327,332 ****
---- 331,337 ----
-  
-  
-  /* Function Definitions */
-+ #ifndef __GNUC__
-  BOOL __saveds __asm				 FindControllerID ( register __a0 char *devname,
-  													register __a1 ULONG *selfid );
-  ULONG __saveds __asm			 FindDefaults ( register __d0 USHORT Optimize,
-***************
-*** 384,394 ****
---- 389,404 ----
-  																	   ( register __a0 HDWCallbackMsg *msg ));
-  ULONG __saveds __asm			 VerifyDrive ( register __a0 long ( * __asm CallBack)
-  																	( register __a0 HDWCallbackMsg *msg ));
-+ #endif  // __GNUC__
-  
-  
-  
-  #define INQBUFSIZE	36			/* Standard size of Inquiry buffer */
-  #define MAGC_INQBUFSIZE	56	/* Special Inquiry Buffer Size. */
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #define HDWRENCH_H
-  #endif	// HDWRENCH_H
-diff -rc v45/include/libraries/iffparse.h gg/os-include/libraries/iffparse.h
-*** v45/include/libraries/iffparse.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/iffparse.h	Sat Aug 14 07:49:21 2004
-***************
-*** 30,35 ****
---- 30,39 ----
+*** 28,33 ****
+--- 28,37 ----
   #include <devices/clipboard.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  /*****************************************************************************/
-  
-***************
-*** 258,262 ****
---- 262,270 ----
-  
-  /*****************************************************************************/
-  
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* IFFPARSE_H */
-diff -rc v45/include/libraries/locale.h gg/os-include/libraries/locale.h
-*** v45/include/libraries/locale.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/locale.h	Sat Aug 14 07:49:46 2004
-***************
-*** 33,38 ****
---- 33,42 ----
-  #include <utility/tagitem.h>
   #endif
   
 + #ifdef __PPC__
@@ -2878,13 +3006,41 @@ diff -rc v45/include/libraries/locale.h gg/os-include/libraries/locale.h
 + #pragma pack()
 + #endif
   
-  #endif	/* LIBRARIES_LOCALE_H */
-diff -rc v45/include/libraries/lowlevel.h gg/os-include/libraries/lowlevel.h
-*** v45/include/libraries/lowlevel.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/lowlevel.h	Sat Aug 14 07:50:12 2004
+  #endif /* IFFPARSE_H */
+diff -rc v47/include/libraries/keymap.h gg/os-include/libraries/keymap.h
+*** v47/include/libraries/keymap.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/keymap.h	Thu Feb  3 02:59:23 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 17,22 ****
+--- 17,26 ----
+  #include	<exec/lists.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  struct	 KeyMap {
+      UBYTE   *km_LoKeyMapTypes;
+      ULONG   *km_LoKeyMap;
+***************
+*** 134,138 ****
+--- 138,146 ----
+  #define RAWKEY_WHEEL_DOWN       0x7B /* aka NM_WHEEL_DOWN */
+  #define RAWKEY_WHEEL_LEFT       0x7C /* aka NM_WHEEL_LEFT */
+  #define RAWKEY_WHEEL_RIGHT      0x7D /* aka NM_WHEEL_RIGHT */
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif	/* LIBRARIES_KEYMAP_H */
+diff -rc v47/include/libraries/locale.h gg/os-include/libraries/locale.h
+*** v47/include/libraries/locale.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/locale.h	Thu Feb  3 02:59:54 2022
+***************
+*** 32,37 ****
+--- 32,41 ----
   #include <utility/tagitem.h>
   #endif
   
@@ -2896,8 +3052,36 @@ diff -rc v45/include/libraries/lowlevel.h gg/os-include/libraries/lowlevel.h
   /*****************************************************************************/
   
 ***************
-*** 244,248 ****
---- 248,256 ----
+*** 255,259 ****
+--- 259,267 ----
+  
+  /*****************************************************************************/
+  
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif	/* LIBRARIES_LOCALE_H */
+diff -rc v47/include/libraries/lowlevel.h gg/os-include/libraries/lowlevel.h
+*** v47/include/libraries/lowlevel.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/lowlevel.h	Thu Feb  3 03:00:25 2022
+***************
+*** 21,26 ****
+--- 21,30 ----
+  #include <utility/tagitem.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  /*****************************************************************************/
+  
+***************
+*** 243,247 ****
+--- 247,255 ----
   
   /*****************************************************************************/
   
@@ -2907,11 +3091,11 @@ diff -rc v45/include/libraries/lowlevel.h gg/os-include/libraries/lowlevel.h
 + #endif
   
   #endif /* LIBRARIES_LOWLEVEL_H */
-diff -rc v45/include/libraries/mathieeedp.h gg/os-include/libraries/mathieeedp.h
-*** v45/include/libraries/mathieeedp.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/mathieeedp.h	Sat Aug 14 07:50:50 2004
+diff -rc v47/include/libraries/mathieeedp.h gg/os-include/libraries/mathieeedp.h
+*** v47/include/libraries/mathieeedp.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/mathieeedp.h	Thu Feb  3 03:01:13 2022
 ***************
-*** 10,16 ****
+*** 11,17 ****
   */
   
   #ifndef PI
@@ -2919,7 +3103,7 @@ diff -rc v45/include/libraries/mathieeedp.h gg/os-include/libraries/mathieeedp.h
   #endif
   
   #define TWO_PI	(((double)	2)	* PI)
---- 10,16 ----
+--- 11,17 ----
   */
   
   #ifndef PI
@@ -2927,11 +3111,11 @@ diff -rc v45/include/libraries/mathieeedp.h gg/os-include/libraries/mathieeedp.h
   #endif
   
   #define TWO_PI	(((double)	2)	* PI)
-diff -rc v45/include/libraries/mathieeesp.h gg/os-include/libraries/mathieeesp.h
-*** v45/include/libraries/mathieeesp.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/mathieeesp.h	Sat Aug 14 07:51:14 2004
+diff -rc v47/include/libraries/mathieeesp.h gg/os-include/libraries/mathieeesp.h
+*** v47/include/libraries/mathieeesp.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/mathieeesp.h	Thu Feb  3 03:03:07 2022
 ***************
-*** 12,18 ****
+*** 11,17 ****
   */
   
   #ifndef PI
@@ -2939,7 +3123,7 @@ diff -rc v45/include/libraries/mathieeesp.h gg/os-include/libraries/mathieeesp.h
   #endif
   
   #define TWO_PI	(((float)	2)	* PI)
---- 12,18 ----
+--- 11,17 ----
   */
   
   #ifndef PI
@@ -2947,12 +3131,12 @@ diff -rc v45/include/libraries/mathieeesp.h gg/os-include/libraries/mathieeesp.h
   #endif
   
   #define TWO_PI	(((float)	2)	* PI)
-diff -rc v45/include/libraries/mathlibrary.h gg/os-include/libraries/mathlibrary.h
-*** v45/include/libraries/mathlibrary.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/mathlibrary.h	Sat Aug 14 07:51:42 2004
+diff -rc v47/include/libraries/mathlibrary.h gg/os-include/libraries/mathlibrary.h
+*** v47/include/libraries/mathlibrary.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/mathlibrary.h	Thu Feb  3 03:04:29 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <exec/libraries.h>
   #endif
   
@@ -2964,10 +3148,10 @@ diff -rc v45/include/libraries/mathlibrary.h gg/os-include/libraries/mathlibrary
   {
   	struct Library MathIEEEBase_LibNode;
 ***************
-*** 33,37 ****
---- 37,45 ----
-  * hooks in the MathIEEEResource. If specified, these will be called
-  * when the library initializes.
+*** 28,32 ****
+--- 32,40 ----
+  * library. The functions TaskOpenLib and TaskCloseLib are called when
+  * a task opens or closes this library. 
   */
 + 
 + #ifdef __PPC__
@@ -2975,12 +3159,12 @@ diff -rc v45/include/libraries/mathlibrary.h gg/os-include/libraries/mathlibrary
 + #endif
   
   #endif	/* LIBRARIES_MATHLIBRARY_H */
-diff -rc v45/include/libraries/mathresource.h gg/os-include/libraries/mathresource.h
-*** v45/include/libraries/mathresource.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/mathresource.h	Sat Aug 14 07:52:48 2004
+diff -rc v47/include/libraries/mathresource.h gg/os-include/libraries/mathresource.h
+*** v47/include/libraries/mathresource.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/mathresource.h	Thu Feb  3 03:04:54 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 15,20 ****
+--- 15,24 ----
   #include <exec/nodes.h>
   #endif
   
@@ -2989,11 +3173,11 @@ diff -rc v45/include/libraries/mathresource.h gg/os-include/libraries/mathresour
 + #endif
 + 
   /*
-  *	The 'Init' entries are only used if the corresponding
-  *	bit is set in the Flags field.
+  *       The 'Init' entries are only used if the corresponding
+  *       bit is set in the Flags field.
 ***************
-*** 50,54 ****
---- 54,62 ----
+*** 49,53 ****
+--- 53,61 ----
   #define	MATHIEEERESOURCEF_SGLTRANS	(1<<3)
   #define	MATHIEEERESOURCEF_EXTBAS	(1<<4)
   #define	MATHIEEERESOURCEF_EXTTRANS	(1<<5)
@@ -3003,12 +3187,12 @@ diff -rc v45/include/libraries/mathresource.h gg/os-include/libraries/mathresour
 + #endif
   
   #endif	/* RESOURCES_MATHRESOURCE_H */
-diff -rc v45/include/libraries/nonvolatile.h gg/os-include/libraries/nonvolatile.h
-*** v45/include/libraries/nonvolatile.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/nonvolatile.h	Sat Aug 14 07:53:32 2004
+diff -rc v47/include/libraries/nonvolatile.h gg/os-include/libraries/nonvolatile.h
+*** v47/include/libraries/nonvolatile.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/nonvolatile.h	Thu Feb  3 03:05:22 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <exec/nodes.h>
   #endif
   
@@ -3020,8 +3204,8 @@ diff -rc v45/include/libraries/nonvolatile.h gg/os-include/libraries/nonvolatile
   /*****************************************************************************/
   
 ***************
-*** 73,77 ****
---- 77,85 ----
+*** 72,76 ****
+--- 76,84 ----
   
   /*****************************************************************************/
   
@@ -3031,12 +3215,12 @@ diff -rc v45/include/libraries/nonvolatile.h gg/os-include/libraries/nonvolatile
 + #endif
   
   #endif /* LIBRARIES_NONVOLATILE_H */
-diff -rc v45/include/libraries/realtime.h gg/os-include/libraries/realtime.h
-*** v45/include/libraries/realtime.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/libraries/realtime.h	Sat Aug 14 07:54:09 2004
+diff -rc v47/include/libraries/realtime.h gg/os-include/libraries/realtime.h
+*** v47/include/libraries/realtime.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/libraries/realtime.h	Thu Feb  3 03:05:55 2022
 ***************
-*** 33,38 ****
---- 33,42 ----
+*** 32,37 ****
+--- 32,41 ----
   #include <utility/hooks.h>
   #endif
   
@@ -3048,8 +3232,8 @@ diff -rc v45/include/libraries/realtime.h gg/os-include/libraries/realtime.h
   /*****************************************************************************/
   
 ***************
-*** 220,224 ****
---- 224,232 ----
+*** 219,223 ****
+--- 223,231 ----
   
   /*****************************************************************************/
   
@@ -3059,12 +3243,12 @@ diff -rc v45/include/libraries/realtime.h gg/os-include/libraries/realtime.h
 + #endif
   
   #endif /* LIBRARIES_REALTIME_H */
-diff -rc v45/include/prefs/asl.h gg/os-include/prefs/asl.h
-*** v45/include/prefs/asl.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/asl.h	Sat Aug 14 07:55:12 2004
+diff -rc v47/include/prefs/asl.h gg/os-include/prefs/asl.h
+*** v47/include/prefs/asl.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/asl.h	Thu Feb  3 03:06:43 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <libraries/asl.h>
   #endif
   
@@ -3076,8 +3260,8 @@ diff -rc v45/include/prefs/asl.h gg/os-include/prefs/asl.h
   /*****************************************************************************/
   
 ***************
-*** 52,56 ****
---- 56,64 ----
+*** 51,55 ****
+--- 55,63 ----
   
   /*****************************************************************************/
   
@@ -3087,12 +3271,12 @@ diff -rc v45/include/prefs/asl.h gg/os-include/prefs/asl.h
 + #endif
   
   #endif /* PREFS_ASL_H */
-diff -rc v45/include/prefs/font.h gg/os-include/prefs/font.h
-*** v45/include/prefs/font.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/font.h	Sat Aug 14 07:55:29 2004
+diff -rc v47/include/prefs/font.h gg/os-include/prefs/font.h
+*** v47/include/prefs/font.h Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/font.h	Thu Feb  3 03:07:11 2022
 ***************
-*** 25,30 ****
---- 25,34 ----
+*** 24,29 ****
+--- 24,33 ----
   #include <graphics/text.h>
   #endif
   
@@ -3115,12 +3299,12 @@ diff -rc v45/include/prefs/font.h gg/os-include/prefs/font.h
 + #endif
   
   #endif /* PREFS_FONT_H */
-diff -rc v45/include/prefs/icontrol.h gg/os-include/prefs/icontrol.h
-*** v45/include/prefs/icontrol.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/icontrol.h	Sat Aug 14 07:55:54 2004
+diff -rc v47/include/prefs/icontrol.h gg/os-include/prefs/icontrol.h
+*** v47/include/prefs/icontrol.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/icontrol.h	Thu Feb  3 03:07:34 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3132,8 +3316,8 @@ diff -rc v45/include/prefs/icontrol.h gg/os-include/prefs/icontrol.h
   /*****************************************************************************/
   
 ***************
-*** 58,62 ****
---- 62,70 ----
+*** 92,96 ****
+--- 96,104 ----
   
   /*****************************************************************************/
   
@@ -3143,12 +3327,12 @@ diff -rc v45/include/prefs/icontrol.h gg/os-include/prefs/icontrol.h
 + #endif
   
   #endif /* PREFS_ICONTROL_H */
-diff -rc v45/include/prefs/input.h gg/os-include/prefs/input.h
-*** v45/include/prefs/input.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/input.h	Sat Aug 14 07:56:15 2004
+diff -rc v47/include/prefs/input.h gg/os-include/prefs/input.h
+*** v47/include/prefs/input.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/input.h	Thu Feb  3 03:07:54 2022
 ***************
-*** 25,30 ****
---- 25,34 ----
+*** 24,29 ****
+--- 24,33 ----
   #include <devices/timer.h>
   #endif
   
@@ -3160,8 +3344,8 @@ diff -rc v45/include/prefs/input.h gg/os-include/prefs/input.h
   /*****************************************************************************/
   
 ***************
-*** 45,49 ****
---- 49,57 ----
+*** 44,48 ****
+--- 48,56 ----
   
   /*****************************************************************************/
   
@@ -3171,152 +3355,12 @@ diff -rc v45/include/prefs/input.h gg/os-include/prefs/input.h
 + #endif
   
   #endif /* PREFS_INPUT_H */
-diff -rc v45/include/prefs/locale.h gg/os-include/prefs/locale.h
-*** v45/include/prefs/locale.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/locale.h	Sat Aug 14 07:56:38 2004
-***************
-*** 21,26 ****
---- 21,30 ----
-  #include <libraries/iffparse.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  /*****************************************************************************/
-  
-***************
-*** 94,98 ****
---- 98,106 ----
-  
-  /*****************************************************************************/
-  
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_LOCALE_H */
-diff -rc v45/include/prefs/overscan.h gg/os-include/prefs/overscan.h
-*** v45/include/prefs/overscan.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/overscan.h	Sat Aug 14 07:57:29 2004
-***************
-*** 25,30 ****
---- 25,34 ----
-  #include <graphics/gfx.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  /*****************************************************************************/
-  
-***************
-*** 56,60 ****
---- 60,68 ----
-  
-  /*****************************************************************************/
-  
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_OVERSCAN_H */
-diff -rc v45/include/prefs/palette.h gg/os-include/prefs/palette.h
-*** v45/include/prefs/palette.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/palette.h	Sat Aug 14 07:58:05 2004
-***************
-*** 25,30 ****
---- 25,34 ----
-  #include <intuition/intuition.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  /*****************************************************************************/
-  
-***************
-*** 43,47 ****
---- 47,55 ----
-  
-  /*****************************************************************************/
-  
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_PALETTE_H */
-diff -rc v45/include/prefs/pointer.h gg/os-include/prefs/pointer.h
-*** v45/include/prefs/pointer.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/pointer.h	Sat Aug 14 07:58:24 2004
+diff -rc v47/include/prefs/locale.h gg/os-include/prefs/locale.h
+*** v47/include/prefs/locale.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/locale.h	Thu Feb  3 03:08:13 2022
 ***************
 *** 20,25 ****
 --- 20,29 ----
-  #include <libraries/iffparse.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  /*****************************************************************************/
-  
-  #define ID_PNTR MAKE_ID('P','N','T','R')
-***************
-*** 58,62 ****
---- 62,70 ----
-  };
-  
-  /*****************************************************************************/
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_POINTER_H */
-diff -rc v45/include/prefs/prefhdr.h gg/os-include/prefs/prefhdr.h
-*** v45/include/prefs/prefhdr.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/prefhdr.h	Sat Aug 14 07:58:41 2004
-***************
-*** 21,26 ****
---- 21,30 ----
-  #include <libraries/iffparse.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  
-  /*****************************************************************************/
-  
-***************
-*** 39,43 ****
---- 43,51 ----
-  
-  /*****************************************************************************/
-  
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_PREFHDR_H */
-diff -rc v45/include/prefs/printergfx.h gg/os-include/prefs/printergfx.h
-*** v45/include/prefs/printergfx.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/printergfx.h	Sat Aug 14 07:59:01 2004
-***************
-*** 21,26 ****
---- 21,30 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3338,14 +3382,14 @@ diff -rc v45/include/prefs/printergfx.h gg/os-include/prefs/printergfx.h
 + #pragma pack()
 + #endif
   
-  #endif /* PREFS_PRINTERGFX_H */
-diff -rc v45/include/prefs/printerps.h gg/os-include/prefs/printerps.h
-*** v45/include/prefs/printerps.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/printerps.h	Sat Aug 14 07:59:22 2004
+  #endif /* PREFS_LOCALE_H */
+diff -rc v47/include/prefs/overscan.h gg/os-include/prefs/overscan.h
+*** v47/include/prefs/overscan.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/overscan.h	Thu Feb  3 03:08:32 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
-  #include <libraries/iffparse.h>
+*** 24,29 ****
+--- 24,33 ----
+  #include <graphics/gfx.h>
   #endif
   
 + #ifdef __PPC__
@@ -3356,8 +3400,8 @@ diff -rc v45/include/prefs/printerps.h gg/os-include/prefs/printerps.h
   /*****************************************************************************/
   
 ***************
-*** 155,159 ****
---- 159,167 ----
+*** 55,59 ****
+--- 59,67 ----
   
   /*****************************************************************************/
   
@@ -3366,42 +3410,14 @@ diff -rc v45/include/prefs/printerps.h gg/os-include/prefs/printerps.h
 + #pragma pack()
 + #endif
   
-  #endif /* PREFS_PRINTERPS_H */
-diff -rc v45/include/prefs/printertxt.h gg/os-include/prefs/printertxt.h
-*** v45/include/prefs/printertxt.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/printertxt.h	Sat Aug 14 07:59:44 2004
+  #endif /* PREFS_OVERSCAN_H */
+diff -rc v47/include/prefs/palette.h gg/os-include/prefs/palette.h
+*** v47/include/prefs/palette.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/palette.h	Thu Feb  3 03:08:48 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
-  #include <libraries/iffparse.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  /*****************************************************************************/
-  
-  #define ID_PTXT MAKE_ID('P','T','X','T')
-***************
-*** 103,107 ****
---- 107,115 ----
-  };
-  
-  /*****************************************************************************/
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif /* PREFS_PRINTERTXT_H */
-diff -rc v45/include/prefs/reaction.h gg/os-include/prefs/reaction.h
-*** v45/include/prefs/reaction.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/reaction.h	Sat Aug 14 07:59:59 2004
-***************
-*** 18,23 ****
---- 18,27 ----
-  #include <graphics/text.h>
+*** 24,29 ****
+--- 24,33 ----
+  #include <intuition/intuition.h>
   #endif
   
 + #ifdef __PPC__
@@ -3414,6 +3430,174 @@ diff -rc v45/include/prefs/reaction.h gg/os-include/prefs/reaction.h
 ***************
 *** 42,46 ****
 --- 46,54 ----
+  
+  /*****************************************************************************/
+  
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_PALETTE_H */
+diff -rc v47/include/prefs/pointer.h gg/os-include/prefs/pointer.h
+*** v47/include/prefs/pointer.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/pointer.h	Thu Feb  3 03:09:08 2022
+***************
+*** 19,24 ****
+--- 19,28 ----
+  #include <libraries/iffparse.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*****************************************************************************/
+  
+  #define ID_PNTR MAKE_ID('P','N','T','R')
+***************
+*** 57,61 ****
+--- 61,69 ----
+  };
+  
+  /*****************************************************************************/
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_POINTER_H */
+diff -rc v47/include/prefs/prefhdr.h gg/os-include/prefs/prefhdr.h
+*** v47/include/prefs/prefhdr.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/prefhdr.h	Thu Feb  3 03:09:27 2022
+***************
+*** 20,25 ****
+--- 20,29 ----
+  #include <libraries/iffparse.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  /*****************************************************************************/
+  
+***************
+*** 38,42 ****
+--- 42,50 ----
+  
+  /*****************************************************************************/
+  
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_PREFHDR_H */
+diff -rc v47/include/prefs/printergfx.h gg/os-include/prefs/printergfx.h
+*** v47/include/prefs/printergfx.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/printergfx.h	Thu Feb  3 03:09:50 2022
+***************
+*** 20,25 ****
+--- 20,29 ----
+  #include <libraries/iffparse.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  /*****************************************************************************/
+  
+***************
+*** 92,96 ****
+--- 96,104 ----
+  
+  /*****************************************************************************/
+  
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_PRINTERGFX_H */
+diff -rc v47/include/prefs/printerps.h gg/os-include/prefs/printerps.h
+*** v47/include/prefs/printerps.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/printerps.h	Thu Feb  3 03:10:11 2022
+***************
+*** 20,25 ****
+--- 20,29 ----
+  #include <libraries/iffparse.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  /*****************************************************************************/
+  
+***************
+*** 154,158 ****
+--- 158,166 ----
+  
+  /*****************************************************************************/
+  
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_PRINTERPS_H */
+diff -rc v47/include/prefs/printertxt.h gg/os-include/prefs/printertxt.h
+*** v47/include/prefs/printertxt.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/printertxt.h	Thu Feb  3 03:10:28 2022
+***************
+*** 19,24 ****
+--- 19,28 ----
+  #include <libraries/iffparse.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*****************************************************************************/
+  
+  #define ID_PTXT MAKE_ID('P','T','X','T')
+***************
+*** 106,110 ****
+--- 110,118 ----
+  };
+  
+  /*****************************************************************************/
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* PREFS_PRINTERTXT_H */
+diff -rc v47/include/prefs/reaction.h gg/os-include/prefs/reaction.h
+*** v47/include/prefs/reaction.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/reaction.h	Thu Feb  3 03:10:59 2022
+***************
+*** 13,18 ****
+--- 13,22 ----
+  #include <graphics/text.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  
+  /*****************************************************************************/
+  
+***************
+*** 39,43 ****
+--- 43,51 ----
   	UBYTE     rp_LabelName[FONTNAMESIZE];
   	UBYTE     rp_Pattern[256];
   };
@@ -3423,12 +3607,12 @@ diff -rc v45/include/prefs/reaction.h gg/os-include/prefs/reaction.h
 + #endif
   
   #endif /* PREFS_REACTION_H */
-diff -rc v45/include/prefs/screenmode.h gg/os-include/prefs/screenmode.h
-*** v45/include/prefs/screenmode.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/screenmode.h	Sat Aug 14 08:00:14 2004
+diff -rc v47/include/prefs/screenmode.h gg/os-include/prefs/screenmode.h
+*** v47/include/prefs/screenmode.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/screenmode.h	Thu Feb  3 03:11:18 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3440,8 +3624,8 @@ diff -rc v45/include/prefs/screenmode.h gg/os-include/prefs/screenmode.h
   /*****************************************************************************/
   
 ***************
-*** 46,50 ****
---- 50,58 ----
+*** 45,49 ****
+--- 49,57 ----
   
   /*****************************************************************************/
   
@@ -3451,12 +3635,12 @@ diff -rc v45/include/prefs/screenmode.h gg/os-include/prefs/screenmode.h
 + #endif
   
   #endif /* PREFS_SCREENMODE_H */
-diff -rc v45/include/prefs/serial.h gg/os-include/prefs/serial.h
-*** v45/include/prefs/serial.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/serial.h	Sat Aug 14 08:00:31 2004
+diff -rc v47/include/prefs/serial.h gg/os-include/prefs/serial.h
+*** v47/include/prefs/serial.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/serial.h	Thu Feb  3 03:11:37 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3468,8 +3652,8 @@ diff -rc v45/include/prefs/serial.h gg/os-include/prefs/serial.h
   /*****************************************************************************/
   
 ***************
-*** 60,64 ****
---- 64,72 ----
+*** 59,63 ****
+--- 63,71 ----
   
   /*****************************************************************************/
   
@@ -3479,12 +3663,12 @@ diff -rc v45/include/prefs/serial.h gg/os-include/prefs/serial.h
 + #endif
   
   #endif /* PREFS_SERIAL_H */
-diff -rc v45/include/prefs/sound.h gg/os-include/prefs/sound.h
-*** v45/include/prefs/sound.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/sound.h	Sat Aug 14 08:00:47 2004
+diff -rc v47/include/prefs/sound.h gg/os-include/prefs/sound.h
+*** v47/include/prefs/sound.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/sound.h	Thu Feb  3 03:11:53 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3496,8 +3680,8 @@ diff -rc v45/include/prefs/sound.h gg/os-include/prefs/sound.h
   /*****************************************************************************/
   
 ***************
-*** 48,52 ****
---- 52,60 ----
+*** 47,51 ****
+--- 51,59 ----
   
   /*****************************************************************************/
   
@@ -3507,12 +3691,12 @@ diff -rc v45/include/prefs/sound.h gg/os-include/prefs/sound.h
 + #endif
   
   #endif /* PREFS_SOUND_H */
-diff -rc v45/include/prefs/wbpattern.h gg/os-include/prefs/wbpattern.h
-*** v45/include/prefs/wbpattern.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/wbpattern.h	Sat Aug 14 08:01:04 2004
+diff -rc v47/include/prefs/wbpattern.h gg/os-include/prefs/wbpattern.h
+*** v47/include/prefs/wbpattern.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/wbpattern.h	Thu Feb  3 03:12:14 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
+*** 19,24 ****
+--- 19,28 ----
   #include <libraries/iffparse.h>
   #endif
   
@@ -3524,8 +3708,8 @@ diff -rc v45/include/prefs/wbpattern.h gg/os-include/prefs/wbpattern.h
   
   #define ID_PTRN MAKE_ID('P','T','R','N')
 ***************
-*** 76,80 ****
---- 80,88 ----
+*** 96,100 ****
+--- 100,108 ----
   #define PAT_HEIGHT	16
   
   /*****************************************************************************/
@@ -3535,12 +3719,12 @@ diff -rc v45/include/prefs/wbpattern.h gg/os-include/prefs/wbpattern.h
 + #endif
   
   #endif /* PREFS_WBPATTERN_H */
-diff -rc v45/include/prefs/workbench.h gg/os-include/prefs/workbench.h
-*** v45/include/prefs/workbench.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/prefs/workbench.h	Sat Aug 14 08:01:24 2004
+diff -rc v47/include/prefs/workbench.h gg/os-include/prefs/workbench.h
+*** v47/include/prefs/workbench.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/prefs/workbench.h	Thu Feb  3 03:12:30 2022
 ***************
-*** 18,23 ****
---- 18,27 ----
+*** 24,29 ****
+--- 24,33 ----
   #include <graphics/gfx.h>
   #endif
   
@@ -3552,20 +3736,48 @@ diff -rc v45/include/prefs/workbench.h gg/os-include/prefs/workbench.h
   
   #define ID_WBNC MAKE_ID('W','B','N','C')
 ***************
-*** 49,53 ****
---- 53,61 ----
-  };
+*** 73,77 ****
+--- 77,85 ----
   
   /*****************************************************************************/
+  
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif /* PREFS_WORKBENCH_H */
-diff -rc v45/include/reaction/reaction_class.h gg/os-include/reaction/reaction_class.h
-*** v45/include/reaction/reaction_class.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/reaction/reaction_class.h	Sat Aug 14 08:02:04 2004
+diff -rc v47/include/reaction/reaction_author.h gg/os-include/reaction/reaction_author.h
+*** v47/include/reaction/reaction_author.h   Tue Apr 13 02:41:06 2021
+--- gg/os-include/reaction/reaction_author.h	Thu Feb  3 03:14:06 2022
+***************
+*** 5,10 ****
+--- 5,14 ----
+  #include <exec/types.h>
+  #endif
+  
++ #ifdef __PPC__
++ #pragma pack(2)
++ #endif
++ 
+  /*
+  **  $VER: reaction_author.h 44.1 (17.7.99)
+  **
+***************
+*** 44,48 ****
+--- 48,56 ----
+  	LONG extp_LightPen;	/* XEN/Thick extended locked pen */
+  	/* NOTE: This structure may grow! */
+  };
++ 
++ #ifdef __PPC__
++ #pragma pack()
++ #endif
+  
+  #endif /* REACTION_AUTHOR_H */
+diff -rc v47/include/reaction/reaction_class.h gg/os-include/reaction/reaction_class.h
+*** v47/include/reaction/reaction_class.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/reaction/reaction_class.h	Thu Feb  3 03:14:24 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -3591,9 +3803,9 @@ diff -rc v45/include/reaction/reaction_class.h gg/os-include/reaction/reaction_c
 + #endif
   
   #endif /* REACTION_REACTION_CLASS_H */
-diff -rc v45/include/reaction/reaction_prefs.h gg/os-include/reaction/reaction_prefs.h
-*** v45/include/reaction/reaction_prefs.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/reaction/reaction_prefs.h	Sat Aug 14 08:02:49 2004
+diff -rc v47/include/reaction/reaction_prefs.h gg/os-include/reaction/reaction_prefs.h
+*** v47/include/reaction/reaction_prefs.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/reaction/reaction_prefs.h	Thu Feb  3 03:16:05 2022
 ***************
 *** 14,19 ****
 --- 14,23 ----
@@ -3604,12 +3816,12 @@ diff -rc v45/include/reaction/reaction_prefs.h gg/os-include/reaction/reaction_p
 + #pragma pack(2)
 + #endif
 + 
-  /*
-   * Obtain this semaphore while reading the preferences
-   */
+  #define RAPREFSSEMAPHORE "REACTION-PREFS"
+  
+  /* WARNING: This structure has been changing, and will continue to change.
 ***************
-*** 66,70 ****
---- 70,78 ----
+*** 63,67 ****
+--- 67,75 ----
   #define GLT_GT    0
   #define GLT_FLAT  1
   #define GLT_3D    2
@@ -3618,13 +3830,13 @@ diff -rc v45/include/reaction/reaction_prefs.h gg/os-include/reaction/reaction_p
 + #pragma pack()
 + #endif
   
-  #endif /* REACTION_REACTION_PREFS_H */
-diff -rc v45/include/resources/card.h gg/os-include/resources/card.h
-*** v45/include/resources/card.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/resources/card.h	Sat Aug 14 08:04:18 2004
+  #endif
+diff -rc v47/include/resources/card.h gg/os-include/resources/card.h
+*** v47/include/resources/card.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/resources/card.h	Thu Feb  3 03:18:19 2022
 ***************
-*** 23,28 ****
---- 23,32 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <exec/interrupts.h>
   #endif
   
@@ -3636,8 +3848,8 @@ diff -rc v45/include/resources/card.h gg/os-include/resources/card.h
   
   /* Structures used by the card.resource				*/
 ***************
-*** 183,187 ****
---- 187,195 ----
+*** 180,184 ****
+--- 184,192 ----
   
   #define	XIPFLAGSB_AUTORUN	0
   #define XIPFLAGSF_AUTORUN	(1<<XIPFLAGSB_AUTORUN)
@@ -3647,12 +3859,12 @@ diff -rc v45/include/resources/card.h gg/os-include/resources/card.h
 + #endif
   
   #endif	/* RESOURCES_CARD_H */
-diff -rc v45/include/resources/disk.h gg/os-include/resources/disk.h
-*** v45/include/resources/disk.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/resources/disk.h	Sat Aug 14 08:04:49 2004
+diff -rc v47/include/resources/disk.h gg/os-include/resources/disk.h
+*** v47/include/resources/disk.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/resources/disk.h	Thu Feb  3 03:18:52 2022
 ***************
-*** 30,35 ****
---- 30,39 ----
+*** 29,34 ****
+--- 29,38 ----
   #include <exec/libraries.h>
   #endif
   
@@ -3660,12 +3872,12 @@ diff -rc v45/include/resources/disk.h gg/os-include/resources/disk.h
 + #pragma pack(2)
 + #endif
 + 
-  
   /********************************************************************
   *
+  * Resource structures
 ***************
-*** 119,123 ****
---- 123,131 ----
+*** 113,118 ****
+--- 117,126 ----
   #define	DRT_37422D2S	(0x55555555)
   #define DRT_EMPTY	(0xFFFFFFFF)
   #define DRT_150RPM	(0xAAAAAAAA)
@@ -3675,12 +3887,13 @@ diff -rc v45/include/resources/disk.h gg/os-include/resources/disk.h
 + #endif
   
   #endif /* RESOURCES_DISK_H */
-diff -rc v45/include/resources/filesysres.h gg/os-include/resources/filesysres.h
-*** v45/include/resources/filesysres.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/resources/filesysres.h	Sat Aug 14 08:05:05 2004
+  
+diff -rc v47/include/resources/filesysres.h gg/os-include/resources/filesysres.h
+*** v47/include/resources/filesysres.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/resources/filesysres.h	Thu Feb  3 03:19:16 2022
 ***************
-*** 20,25 ****
---- 20,29 ----
+*** 19,24 ****
+--- 19,28 ----
   #include	<dos/dos.h>
   #endif
   
@@ -3692,8 +3905,8 @@ diff -rc v45/include/resources/filesysres.h gg/os-include/resources/filesysres.h
   
   struct FileSysResource {
 ***************
-*** 48,52 ****
---- 52,60 ----
+*** 47,51 ****
+--- 51,59 ----
       BPTR    fse_GlobalVec;	/* BCPL global vector when starting task */
       /* no more entries need exist than those implied by fse_PatchFlags */
   };
@@ -3703,40 +3916,12 @@ diff -rc v45/include/resources/filesysres.h gg/os-include/resources/filesysres.h
 + #endif
   
   #endif	/* RESOURCES_FILESYSRES_H */
-diff -rc v45/include/resources/mathresource.h gg/os-include/resources/mathresource.h
-*** v45/include/resources/mathresource.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/resources/mathresource.h	Sat Aug 14 08:05:21 2004
+diff -rc v47/include/rexx/rexxio.h gg/os-include/rexx/rexxio.h
+*** v47/include/rexx/rexxio.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/rexx/rexxio.h	Thu Feb  3 03:20:59 2022
 ***************
-*** 16,21 ****
---- 16,25 ----
-  #include <exec/nodes.h>
-  #endif
-  
-+ #ifdef __PPC__
-+ #pragma pack(2)
-+ #endif
-+ 
-  /*
-  *	The 'Init' entries are only used if the corresponding
-  *	bit is set in the Flags field.
-***************
-*** 50,54 ****
---- 54,62 ----
-  #define	MATHIEEERESOURCEF_SGLTRANS	(1<<3)
-  #define	MATHIEEERESOURCEF_EXTBAS	(1<<4)
-  #define	MATHIEEERESOURCEF_EXTTRANS	(1<<5)
-+ 
-+ #ifdef __PPC__
-+ #pragma pack()
-+ #endif
-  
-  #endif	/* RESOURCES_MATHRESOURCE_H */
-diff -rc v45/include/rexx/rexxio.h gg/os-include/rexx/rexxio.h
-*** v45/include/rexx/rexxio.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/rexx/rexxio.h	Sat Aug 14 08:06:16 2004
-***************
-*** 15,20 ****
---- 15,24 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <rexx/storage.h>
   #endif
   
@@ -3748,8 +3933,8 @@ diff -rc v45/include/rexx/rexxio.h gg/os-include/rexx/rexxio.h
   
   /*
 ***************
-*** 78,82 ****
---- 82,90 ----
+*** 76,80 ****
+--- 80,88 ----
    */
   #define ACTION_STACK 2002L	       /* stack a line			*/
   #define ACTION_QUEUE 2003L	       /* queue a line			*/
@@ -3759,12 +3944,12 @@ diff -rc v45/include/rexx/rexxio.h gg/os-include/rexx/rexxio.h
 + #endif
   
   #endif
-diff -rc v45/include/rexx/rxslib.h gg/os-include/rexx/rxslib.h
-*** v45/include/rexx/rxslib.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/rexx/rxslib.h	Sat Aug 14 08:06:41 2004
+diff -rc v47/include/rexx/rxslib.h gg/os-include/rexx/rxslib.h
+*** v47/include/rexx/rxslib.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/rexx/rxslib.h	Thu Feb  3 03:21:20 2022
 ***************
-*** 15,20 ****
---- 15,24 ----
+*** 13,18 ****
+--- 13,22 ----
   #include <rexx/storage.h>
   #endif
   
@@ -3776,8 +3961,8 @@ diff -rc v45/include/rexx/rxslib.h gg/os-include/rexx/rxslib.h
   #define RXSDIR	 "REXX"
   #define RXSTNAME "ARexx"
 ***************
-*** 103,107 ****
---- 107,115 ----
+*** 102,106 ****
+--- 106,114 ----
   #define CTF_REXXSPC (1 << CTB_REXXSPC)
   #define CTF_UPPER   (1 << CTB_UPPER)
   #define CTF_LOWER   (1 << CTB_LOWER)
@@ -3787,12 +3972,12 @@ diff -rc v45/include/rexx/rxslib.h gg/os-include/rexx/rxslib.h
 + #endif
   
   #endif
-diff -rc v45/include/rexx/storage.h gg/os-include/rexx/storage.h
-*** v45/include/rexx/storage.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/rexx/storage.h	Sat Aug 14 08:07:01 2004
+diff -rc v47/include/rexx/storage.h gg/os-include/rexx/storage.h
+*** v47/include/rexx/storage.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/rexx/storage.h	Thu Feb  3 03:21:44 2022
 ***************
-*** 31,36 ****
---- 31,40 ----
+*** 29,34 ****
+--- 29,38 ----
   #include <exec/libraries.h>
   #endif
   
@@ -3804,23 +3989,23 @@ diff -rc v45/include/rexx/storage.h gg/os-include/rexx/storage.h
    * It includes the buffer area for the string and associated attributes.
    * This is actually a variable-length structure; it is allocated for a
 ***************
-*** 229,233 ****
---- 233,241 ----
-     APTR     sn_Ptr;		       /* pointer value		*/
-     LONG     sn_Size;		       /* size of object		*/
-     };				       /* size: 16 bytes		*/
+*** 240,244 ****
+--- 244,252 ----
+  */
+  
+  #define CHECKREXXMSG(msg) (RexxSysBase && (msg)->rm_LibBase == RexxSysBase && (msg)->rm_TaskBlock && IsRexxMsg(msg))
 + 
 + #ifdef __PPC__
 + #pragma pack()
 + #endif
   
   #endif
-diff -rc v45/include/utility/date.h gg/os-include/utility/date.h
-*** v45/include/utility/date.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/utility/date.h	Sat Aug 14 08:07:25 2004
+diff -rc v47/include/utility/date.h gg/os-include/utility/date.h
+*** v47/include/utility/date.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/utility/date.h	Thu Feb  3 03:23:29 2022
 ***************
-*** 17,22 ****
---- 17,26 ----
+*** 16,21 ****
+--- 16,25 ----
   #include <exec/types.h>
   #endif
   
@@ -3832,8 +4017,8 @@ diff -rc v45/include/utility/date.h gg/os-include/utility/date.h
   /*****************************************************************************/
   
 ***************
-*** 35,39 ****
---- 39,47 ----
+*** 34,38 ****
+--- 38,46 ----
   
   /*****************************************************************************/
   
@@ -3843,12 +4028,12 @@ diff -rc v45/include/utility/date.h gg/os-include/utility/date.h
 + #endif
   
   #endif /* UTILITY_DATE_H */
-diff -rc v45/include/utility/hooks.h gg/os-include/utility/hooks.h
-*** v45/include/utility/hooks.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/utility/hooks.h	Sat Aug 14 08:07:47 2004
+diff -rc v47/include/utility/hooks.h gg/os-include/utility/hooks.h
+*** v47/include/utility/hooks.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/utility/hooks.h	Thu Feb  3 03:23:46 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <exec/nodes.h>
   #endif
   
@@ -3860,8 +4045,8 @@ diff -rc v45/include/utility/hooks.h gg/os-include/utility/hooks.h
   /*****************************************************************************/
   
 ***************
-*** 96,100 ****
---- 100,108 ----
+*** 95,99 ****
+--- 99,107 ----
   
   /*****************************************************************************/
   
@@ -3871,12 +4056,12 @@ diff -rc v45/include/utility/hooks.h gg/os-include/utility/hooks.h
 + #endif
   
   #endif /* UTILITY_HOOKS_H */
-diff -rc v45/include/utility/name.h gg/os-include/utility/name.h
-*** v45/include/utility/name.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/utility/name.h	Sat Aug 14 08:08:02 2004
+diff -rc v47/include/utility/name.h gg/os-include/utility/name.h
+*** v47/include/utility/name.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/utility/name.h	Thu Feb  3 03:24:09 2022
 ***************
-*** 17,22 ****
---- 17,26 ----
+*** 16,21 ****
+--- 16,25 ----
   #include <exec/types.h>
   #endif
   
@@ -3888,8 +4073,8 @@ diff -rc v45/include/utility/name.h gg/os-include/utility/name.h
   /*****************************************************************************/
   
 ***************
-*** 43,47 ****
---- 47,55 ----
+*** 42,46 ****
+--- 46,54 ----
   
   /*****************************************************************************/
   
@@ -3899,12 +4084,12 @@ diff -rc v45/include/utility/name.h gg/os-include/utility/name.h
 + #endif
   
   #endif /* UTILITY_NAME_H */
-diff -rc v45/include/utility/tagitem.h gg/os-include/utility/tagitem.h
-*** v45/include/utility/tagitem.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/utility/tagitem.h	Sat Aug 14 08:08:42 2004
+diff -rc v47/include/utility/tagitem.h gg/os-include/utility/tagitem.h
+*** v47/include/utility/tagitem.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/utility/tagitem.h	Thu Feb  3 03:25:33 2022
 ***************
-*** 17,22 ****
---- 17,26 ----
+*** 16,21 ****
+--- 16,25 ----
   #include <exec/types.h>
   #endif
   
@@ -3916,8 +4101,8 @@ diff -rc v45/include/utility/tagitem.h gg/os-include/utility/tagitem.h
   /*****************************************************************************/
   
 ***************
-*** 73,77 ****
---- 77,85 ----
+*** 72,76 ****
+--- 76,84 ----
   
   /*****************************************************************************/
   
@@ -3927,12 +4112,12 @@ diff -rc v45/include/utility/tagitem.h gg/os-include/utility/tagitem.h
 + #endif
   
   #endif /* UTILITY_TAGITEM_H */
-diff -rc v45/include/utility/utility.h gg/os-include/utility/utility.h
-*** v45/include/utility/utility.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/utility/utility.h	Sat Aug 14 08:08:58 2004
+diff -rc v47/include/utility/utility.h gg/os-include/utility/utility.h
+*** v47/include/utility/utility.h    Tue Apr 13 02:41:06 2021
+--- gg/os-include/utility/utility.h	Thu Feb  3 03:25:51 2022
 ***************
-*** 21,26 ****
---- 21,30 ----
+*** 20,25 ****
+--- 20,29 ----
   #include <exec/libraries.h>
   #endif
   
@@ -3944,8 +4129,8 @@ diff -rc v45/include/utility/utility.h gg/os-include/utility/utility.h
   /*****************************************************************************/
   
 ***************
-*** 38,42 ****
---- 42,50 ----
+*** 37,41 ****
+--- 41,49 ----
   
   /*****************************************************************************/
   
@@ -3955,12 +4140,12 @@ diff -rc v45/include/utility/utility.h gg/os-include/utility/utility.h
 + #endif
   
   #endif /* UTILITY_UTILITY_H */
-diff -rc v45/include/workbench/icon.h gg/os-include/workbench/icon.h
-*** v45/include/workbench/icon.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/workbench/icon.h	Sat Aug 14 08:09:30 2004
+diff -rc v47/include/workbench/icon.h gg/os-include/workbench/icon.h
+*** v47/include/workbench/icon.h     Tue Apr 13 02:41:06 2021
+--- gg/os-include/workbench/icon.h	Thu Feb  3 03:26:23 2022
 ***************
-*** 30,35 ****
---- 30,39 ----
+*** 29,34 ****
+--- 29,38 ----
   #include <dos/dos.h>
   #endif /* !DOS_DOS_H */
   
@@ -3972,9 +4157,9 @@ diff -rc v45/include/workbench/icon.h gg/os-include/workbench/icon.h
   
   #define ICONNAME "icon.library"
 ***************
-*** 336,340 ****
---- 340,348 ----
-  #define ICONA_LAST_TAG (ICONA_Dummy+89)
+*** 365,369 ****
+--- 369,377 ----
+  #define ICONA_LAST_TAG (ICONA_Dummy+123)
   
   /****************************************************************************/
 + 
@@ -3983,12 +4168,12 @@ diff -rc v45/include/workbench/icon.h gg/os-include/workbench/icon.h
 + #endif
   
   #endif  /* !WORKBENCH_ICON_H */
-diff -rc v45/include/workbench/startup.h gg/os-include/workbench/startup.h
-*** v45/include/workbench/startup.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/workbench/startup.h	Sat Aug 14 08:09:49 2004
+diff -rc v47/include/workbench/startup.h gg/os-include/workbench/startup.h
+*** v47/include/workbench/startup.h  Tue Apr 13 02:41:06 2021
+--- gg/os-include/workbench/startup.h	Thu Feb  3 03:26:39 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 21,26 ****
+--- 21,30 ----
   #include <dos/dos.h>
   #endif
   
@@ -4000,8 +4185,8 @@ diff -rc v45/include/workbench/startup.h gg/os-include/workbench/startup.h
       struct Message	sm_Message;	/* a standard message structure */
       struct MsgPort *	sm_Process;	/* the process descriptor for you */
 ***************
-*** 35,39 ****
---- 39,47 ----
+*** 34,38 ****
+--- 38,46 ----
       BPTR		wa_Lock;	/* a lock descriptor */
       BYTE *		wa_Name;	/* a string relative to that lock */
   };
@@ -4010,13 +4195,13 @@ diff -rc v45/include/workbench/startup.h gg/os-include/workbench/startup.h
 + #pragma pack()
 + #endif
   
-  #endif	/* !WORKBENCH_STARTUP_H */
-diff -rc v45/include/workbench/workbench.h gg/os-include/workbench/workbench.h
-*** v45/include/workbench/workbench.h	Tue Oct 21 13:26:08 2003
---- gg/os-include/workbench/workbench.h	Sat Aug 14 08:10:26 2004
+  #endif  /* !WORKBENCH_STARTUP_H */
+diff -rc v47/include/workbench/workbench.h gg/os-include/workbench/workbench.h
+*** v47/include/workbench/workbench.h	     Tue Apr 13 02:41:06 2021
+--- gg/os-include/workbench/workbench.h	Thu Feb  3 03:27:06 2022
 ***************
-*** 22,27 ****
---- 22,31 ----
+*** 33,38 ****
+--- 33,42 ----
   #include <intuition/intuition.h>
   #endif
   
@@ -4028,8 +4213,8 @@ diff -rc v45/include/workbench/workbench.h gg/os-include/workbench/workbench.h
   #define	WBDRAWER	2
   #define	WBTOOL		3
 ***************
-*** 692,696 ****
---- 696,704 ----
+*** 863,867 ****
+--- 867,875 ----
   #define UPDATEWB_ObjectAdded	(1)	/* Object is new or has changed. */
   
   /****************************************************************************/
