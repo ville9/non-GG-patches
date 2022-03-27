@@ -213,6 +213,26 @@ diff -rcN v47/include/clib/compiler-specific.h gg/os-include/clib/compiler-speci
   #define __FAST__ __fast
   #else
   #define __FAST__
+diff -rcN v47/include/clib/disk_protos.h gg/os-include/clib/disk_protos.h
+*** v47/include/clib/disk_protos.h	Thu Feb  3 11:59:04 2022
+--- gg/os-include/clib/disk_protos.h	Mon Mar 21 10:49:34 2022
+***************
+*** 22,28 ****
+  #endif
+  BOOL AllocUnit( LONG unitNum );
+  VOID FreeUnit( LONG unitNum );
+! struct DiskResourceUnit *GetUnit( struct DiskResourceUnit *unitPointer );
+  VOID GiveUnit( VOID );
+  LONG GetUnitID( LONG unitNum );
+  /*--- functions in V37 or higher (Release 2.04) ---*/
+--- 22,28 ----
+  #endif
+  BOOL AllocUnit( LONG unitNum );
+  VOID FreeUnit( LONG unitNum );
+! struct DiscResourceUnit *GetUnit( struct DiscResourceUnit *unitPointer );
+  VOID GiveUnit( VOID );
+  LONG GetUnitID( LONG unitNum );
+  /*--- functions in V37 or higher (Release 2.04) ---*/
 diff -rcN v47/include/clib/listview_protos.h gg/os-include/clib/listview_protos.h
 *** v47/include/clib/listview_protos.h	Thu Jan  1 01:00:00 1970
 --- gg/os-include/clib/listview_protos.h	Fri Mar 11 05:00:55 2022
