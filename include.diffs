@@ -98,21 +98,29 @@ diff -rcN v47/include/classes/window.h gg/os-include/classes/window.h
   #endif /* CLASSES_WINDOW_H */
 diff -rcN v47/include/clib/compiler-specific.h gg/os-include/clib/compiler-specific.h
 *** v47/include/clib/compiler-specific.h	Thu Feb  3 11:59:04 2022
---- gg/os-include/clib/compiler-specific.h	Fri Mar 11 17:19:41 2022
+--- gg/os-include/clib/compiler-specific.h	Fri Mar 25 11:59:09 2022
 ***************
-*** 52,58 ****
+*** 48,58 ****
+   * the GNU 'C' compiler.
+   */
+  #ifndef __REG__
+! #if defined(__SASC) || defined(__MAXON__) || defined(__STORM__)
   #define __REG__(r, p) register __ ## r p
-  #elif defined(__VBCC__)
+! #elif defined(__VBCC__)
   #define __REG__(r, p) __reg(#r) p
 ! #elif defined(__GNUC__) && defined(AMIGA)
   #define __REG__(r, p) p __asm(#r)
   #elif defined(_DCC)
   #define __REG__(r, p) __ ## r p
---- 52,58 ----
+--- 48,58 ----
+   * the GNU 'C' compiler.
+   */
+  #ifndef __REG__
+! #if (defined(__SASC) && defined(_M68000)) || defined(__MAXON__) || defined(__STORM__)
   #define __REG__(r, p) register __ ## r p
-  #elif defined(__VBCC__)
+! #elif defined(__VBCC__) && defined(__M68K__)
   #define __REG__(r, p) __reg(#r) p
-! #elif defined(__GNUC__) && defined(AMIGA) && defined(mc68000) && !defined(__cplusplus)
+! #elif defined(__GNUC__) && defined(__mc68000) && !defined(__cplusplus)
   #define __REG__(r, p) p __asm(#r)
   #elif defined(_DCC)
   #define __REG__(r, p) __ ## r p
@@ -129,10 +137,82 @@ diff -rcN v47/include/clib/compiler-specific.h gg/os-include/clib/compiler-speci
    * Stack based calling conventions
    */
   #ifndef __STDARGS__
-! #if (defined(__GNUC__) && defined(AMIGA) && defined(mc68000)) || defined(__SASC)
+! #if (defined(__GNUC__) && defined(__mc68000)) || defined(__SASC) || (defined(__VBCC__) && defined(__M68K__))
   #define __STDARGS__ __stdargs
   #elif defined(_DCC)
   #define __STDARGS__ __stkargs
+***************
+*** 79,85 ****
+   * initial A4 register value.
+   */
+  #ifndef __SAVE_DS__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(AMIGA)) || defined(__SASC) || defined(__STORM__) || defined(__VBCC__)
+  #define __SAVE_DS__ __saveds
+  #else
+  #define __SAVE_DS__
+--- 79,85 ----
+   * initial A4 register value.
+   */
+  #ifndef __SAVE_DS__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(__mc68000)) || defined(__SASC) || defined(__STORM__) || defined(__VBCC__)
+  #define __SAVE_DS__ __saveds
+  #else
+  #define __SAVE_DS__
+***************
+*** 103,111 ****
+   * updated based upon whether or not the value of register D0 is non-zero.
+   */
+  #ifndef __INTERRUPT__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(AMIGA)) || defined(__MAXON__) || defined(__SASC) || defined(__STORM__)
+  #define __INTERRUPT__ __interrupt
+! #elif defined(__VBCC__)
+  #define __INTERRUPT__ __amigainterrupt
+  #else
+  #define __INTERRUPT__
+--- 103,111 ----
+   * updated based upon whether or not the value of register D0 is non-zero.
+   */
+  #ifndef __INTERRUPT__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(__mc68000)) || defined(__MAXON__) || defined(__SASC) || defined(__STORM__)
+  #define __INTERRUPT__ __interrupt
+! #elif defined(__VBCC__) && defined(__M68K__)
+  #define __INTERRUPT__ __amigainterrupt
+  #else
+  #define __INTERRUPT__
+***************
+*** 116,122 ****
+   * Request that the object is placed into chip memory (see <exec/memory.h>).
+   */
+  #ifndef __CHIP__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(AMIGA)) || defined(__MAXON__) || defined(__SASC) || defined(__STORM__) || defined(__VBCC__)
+  #define __CHIP__ __chip
+  #else
+  #define __CHIP__
+--- 116,122 ----
+   * Request that the object is placed into chip memory (see <exec/memory.h>).
+   */
+  #ifndef __CHIP__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(__mc68000)) || defined(__MAXON__) || defined(__SASC) || defined(__STORM__) || defined(__VBCC__)
+  #define __CHIP__ __chip
+  #else
+  #define __CHIP__
+***************
+*** 127,133 ****
+   * Request that the object is placed into fast memory (see <exec/memory.h>).
+   */
+  #ifndef __FAST__
+! #if defined(_DCC) || (defined(__GNUC__) && defined(AMIGA)) || defined(__MAXON__) || defined(__SASC) || defined(__STORM__) || defined(__VBCC__)
+  #define __FAST__ __fast
+  #else
+  #define __FAST__
+--- 127,133 ----
+   * Request that the object is placed into fast memory (see <exec/memory.h>).
+   */
+  #ifndef __FAST__
+! #if defined(_DCC) || defined(__MAXON__) || defined(__STORM__)
+  #define __FAST__ __fast
+  #else
+  #define __FAST__
 diff -rcN v47/include/clib/listview_protos.h gg/os-include/clib/listview_protos.h
 *** v47/include/clib/listview_protos.h	Thu Jan  1 01:00:00 1970
 --- gg/os-include/clib/listview_protos.h	Fri Mar 11 05:00:55 2022
